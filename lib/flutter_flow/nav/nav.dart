@@ -35,12 +35,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context) => Container(
                 color: Colors.transparent,
                 child: Image.asset(
-                  'assets/images/Splash_Claro_Tipo_Lavishly.jpg',
+                  'assets/images/Splash_Claro_Tipo_Lavishly_dos_Mesero.jpg',
                   fit: BoxFit.cover,
                 ),
               ),
             )
-          : LoginWidget(),
+          : InicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -50,17 +50,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   builder: (context) => Container(
                     color: Colors.transparent,
                     child: Image.asset(
-                      'assets/images/Splash_Claro_Tipo_Lavishly.jpg',
+                      'assets/images/Splash_Claro_Tipo_Lavishly_dos_Mesero.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),
                 )
-              : LoginWidget(),
+              : InicioWidget(),
           routes: [
             FFRoute(
-              name: 'Login',
-              path: 'login',
-              builder: (context, params) => LoginWidget(),
+              name: 'Inicio',
+              path: 'inicio',
+              builder: (context, params) => InicioWidget(),
+            ),
+            FFRoute(
+              name: 'ingresarPedido',
+              path: 'ingresarPedido',
+              builder: (context, params) => IngresarPedidoWidget(),
+            ),
+            FFRoute(
+              name: 'Principal',
+              path: 'principal',
+              builder: (context, params) => PrincipalWidget(),
+            ),
+            FFRoute(
+              name: 'verPedido',
+              path: 'verPedido',
+              builder: (context, params) => VerPedidoWidget(),
+            ),
+            FFRoute(
+              name: 'ingresarArticulo',
+              path: 'ingresarArticulo',
+              builder: (context, params) => IngresarArticuloWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
