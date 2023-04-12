@@ -28,6 +28,9 @@ abstract class ProductoRecord
 
   String? get nombreComboCombo;
 
+  @BuiltValueField(wireName: 'Favoritos')
+  BuiltList<DocumentReference>? get favoritos;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -39,7 +42,8 @@ abstract class ProductoRecord
     ..imagenProducto = ''
     ..obsrvProducto = ''
     ..esActivoProducto = false
-    ..nombreComboCombo = '';
+    ..nombreComboCombo = ''
+    ..favoritos = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Producto');
@@ -83,7 +87,8 @@ Map<String, dynamic> createProductoRecordData({
         ..obsrvProducto = obsrvProducto
         ..esActivoProducto = esActivoProducto
         ..referenciaListaDeProductos = referenciaListaDeProductos
-        ..nombreComboCombo = nombreComboCombo,
+        ..nombreComboCombo = nombreComboCombo
+        ..favoritos = null,
     ),
   );
 

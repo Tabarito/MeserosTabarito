@@ -246,6 +246,8 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -272,7 +274,11 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                                                             MainAxisSize.max,
                                                         children: [
                                                           Text(
-                                                            'Nombre:',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'k9kyb6o9' /* Nombre: */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -297,7 +303,11 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                                                             MainAxisSize.max,
                                                         children: [
                                                           Text(
-                                                            'Precio:',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'ab1pmwt1' /* Precio: */,
+                                                            ),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme

@@ -1,6 +1,7 @@
 import '/auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -132,7 +133,9 @@ class _InicioWidgetState extends State<InicioWidget>
                                   FlutterFlowTheme.of(context).tertiary,
                               tabs: [
                                 Tab(
-                                  text: 'Ingresar',
+                                  text: FFLocalizations.of(context).getText(
+                                    'p32ljov9' /* Ingresar */,
+                                  ),
                                 ),
                               ],
                             ),
@@ -162,7 +165,11 @@ class _InicioWidgetState extends State<InicioWidget>
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                            hintText: 'Correo electrónico',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'vguhdzrd' /* Correo electrónico */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -248,7 +255,11 @@ class _InicioWidgetState extends State<InicioWidget>
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
-                                              hintText: 'Contraseña',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '3p40xdxd' /* Contraseña */,
+                                              ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -388,7 +399,10 @@ class _InicioWidgetState extends State<InicioWidget>
                                                     'Inicio', mounted);
                                               }
                                             },
-                                            text: 'Iniciar sesión',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'yf60mf2i' /* Iniciar sesión */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: 250.0,
                                               height: 50.0,
@@ -432,7 +446,10 @@ class _InicioWidgetState extends State<InicioWidget>
                                                   .pushNamed('OlvidoContrasea');
                                             },
                                             child: Text(
-                                              '¿olvido su contraseña?',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'c1q9acl8' /* ¿olvido su contraseña? */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -466,21 +483,69 @@ class _InicioWidgetState extends State<InicioWidget>
                                                         .spaceEvenly,
                                                 children: [
                                                   Container(
-                                                    width: 100.0,
-                                                    height: 110.0,
+                                                    width: 150.0,
+                                                    height: 165.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15.0),
                                                     ),
-                                                  ),
-                                                  Container(
-                                                    width: 100.0,
-                                                    height: 110.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            FlutterFlowLanguageSelector(
+                                                              width: 150.0,
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .tertiary,
+                                                              borderColor: Colors
+                                                                  .transparent,
+                                                              dropdownIconColor:
+                                                                  Colors.white,
+                                                              borderRadius:
+                                                                  15.0,
+                                                              textStyle:
+                                                                  TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 13.0,
+                                                              ),
+                                                              hideFlags: false,
+                                                              flagSize: 24.0,
+                                                              flagTextGap: 8.0,
+                                                              currentLanguage:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                              languages:
+                                                                  FFLocalizations
+                                                                      .languages(),
+                                                              onChanged: (lang) =>
+                                                                  setAppLanguage(
+                                                                      context,
+                                                                      lang),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                   Expanded(
@@ -541,7 +606,11 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                         .center,
                                                                 children: [
                                                                   Text(
-                                                                    'Fecha:',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'uv3l56d0' /* Fecha: */,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -595,7 +664,11 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                           .center,
                                                                   children: [
                                                                     Text(
-                                                                      'Tipo de cambio dolar:',
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'md12o804' /* Tipo de cambio dolar: */,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -614,7 +687,10 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                           0.0),
                                                                       child:
                                                                           Text(
-                                                                        '\$',
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'w9oepa04' /* $ */,
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(

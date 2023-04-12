@@ -58,7 +58,9 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
             ),
           ),
           title: Text(
-            'Pedido',
+            FFLocalizations.of(context).getText(
+              'qtsf8g7t' /* Pedido */,
+            ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondary,
@@ -145,7 +147,10 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                           scrollDirection: Axis.vertical,
                                           children: [
                                             Text(
-                                              'Pedido #101',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'oelq3nmi' /* Pedido #101 */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)

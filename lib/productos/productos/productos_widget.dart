@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -84,7 +85,9 @@ class _ProductosWidgetState extends State<ProductosWidget>
             },
           ),
           title: Text(
-            'Comidas',
+            FFLocalizations.of(context).getText(
+              'pxgqahc5' /* Comidas */,
+            ),
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondary,
@@ -142,11 +145,12 @@ class _ProductosWidgetState extends State<ProductosWidget>
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: DefaultTabController(
-                  length: 3,
+                  length: 4,
                   initialIndex: 0,
                   child: Column(
                     children: [
                       TabBar(
+                        isScrollable: true,
                         labelColor: FlutterFlowTheme.of(context).secondary,
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
@@ -157,13 +161,24 @@ class _ProductosWidgetState extends State<ProductosWidget>
                         indicatorColor: FlutterFlowTheme.of(context).tertiary,
                         tabs: [
                           Tab(
-                            text: 'Comidas',
+                            text: FFLocalizations.of(context).getText(
+                              'wvc7f97z' /* Comidas */,
+                            ),
                           ),
                           Tab(
-                            text: 'Bebidas',
+                            text: FFLocalizations.of(context).getText(
+                              '1yospfp9' /* Bebidas */,
+                            ),
                           ),
                           Tab(
-                            text: 'Combos',
+                            text: FFLocalizations.of(context).getText(
+                              'k8idy8v5' /* Combos */,
+                            ),
+                          ),
+                          Tab(
+                            text: FFLocalizations.of(context).getText(
+                              '3vp4kjie' /* Favoritos */,
+                            ),
                           ),
                         ],
                       ),
@@ -289,100 +304,86 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceAround,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Nombre:',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Outfit',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
-                                                                          ),
-                                                                    ),
-                                                                    Row(
+                                                                    child:
+                                                                        Column(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
                                                                       mainAxisAlignment:
                                                                           MainAxisAlignment
+                                                                              .spaceAround,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
                                                                               .center,
                                                                       children: [
                                                                         Text(
-                                                                          lVComidaProductoRecord
-                                                                              .nombreProducto!,
-                                                                          textAlign:
-                                                                              TextAlign.start,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Outfit',
-                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    Text(
-                                                                      'Precio:',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .start,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Outfit',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '7ur337lp' /* Nombre: */,
                                                                           ),
-                                                                    ),
-                                                                    Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Text(
+                                                                              lVComidaProductoRecord.nombreProducto!,
+                                                                              textAlign: TextAlign.start,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Outfit',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                         Text(
-                                                                          lVComidaProductoRecord
-                                                                              .precioProducto!
-                                                                              .toString(),
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '6oeatysv' /* Precio: */,
+                                                                          ),
                                                                           textAlign:
                                                                               TextAlign.start,
                                                                           style: FlutterFlowTheme.of(context)
@@ -392,13 +393,99 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
                                                                               ),
                                                                         ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              lVComidaProductoRecord.precioProducto!.toString(),
+                                                                              textAlign: TextAlign.start,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Outfit',
+                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                       ],
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ],
-                                                          ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceEvenly,
+                                                                children: [
+                                                                  ToggleIcon(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      final favoritosElement =
+                                                                          currentUserReference;
+                                                                      final favoritosUpdate = lVComidaProductoRecord
+                                                                              .favoritos!
+                                                                              .toList()
+                                                                              .contains(
+                                                                                  favoritosElement)
+                                                                          ? FieldValue
+                                                                              .arrayRemove([
+                                                                              favoritosElement
+                                                                            ])
+                                                                          : FieldValue
+                                                                              .arrayUnion([
+                                                                              favoritosElement
+                                                                            ]);
+                                                                      final productoUpdateData =
+                                                                          {
+                                                                        'Favoritos':
+                                                                            favoritosUpdate,
+                                                                      };
+                                                                      await lVComidaProductoRecord
+                                                                          .reference
+                                                                          .update(
+                                                                              productoUpdateData);
+                                                                    },
+                                                                    value: lVComidaProductoRecord
+                                                                        .favoritos!
+                                                                        .toList()
+                                                                        .contains(
+                                                                            currentUserReference),
+                                                                    onIcon:
+                                                                        Icon(
+                                                                      Icons
+                                                                          .favorite,
+                                                                      color: Color(
+                                                                          0xFFFF0000),
+                                                                      size:
+                                                                          25.0,
+                                                                    ),
+                                                                    offIcon:
+                                                                        Icon(
+                                                                      Icons
+                                                                          .favorite_border,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          25.0,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
@@ -523,6 +610,9 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(15.0),
                                                       ),
                                                       child: Padding(
                                                         padding:
@@ -559,7 +649,11 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                         .center,
                                                                 children: [
                                                                   Text(
-                                                                    'Nombre:',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'ih2wy5kj' /* Nombre: */,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -593,7 +687,11 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                     ],
                                                                   ),
                                                                   Text(
-                                                                    'Precio:',
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'kbxhiq1c' /* Precio: */,
+                                                                    ),
                                                                     textAlign:
                                                                         TextAlign
                                                                             .start,
@@ -845,7 +943,9 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Text(
-                                                                                'Precio:',
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'tuu9765e' /* Precio: */,
+                                                                                ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Outfit',
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -896,6 +996,264 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                   ),
                                 ),
                               ],
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 40.0),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    StreamBuilder<List<ProductoRecord>>(
+                                      stream: queryProductoRecord(
+                                        queryBuilder: (productoRecord) =>
+                                            productoRecord.where('Favoritos',
+                                                arrayContains:
+                                                    currentUserReference),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitCubeGrid(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<ProductoRecord>
+                                            lVFavoritosProductoRecordList =
+                                            snapshot.data!;
+                                        return ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          shrinkWrap: true,
+                                          scrollDirection: Axis.vertical,
+                                          itemCount:
+                                              lVFavoritosProductoRecordList
+                                                  .length,
+                                          itemBuilder:
+                                              (context, lVFavoritosIndex) {
+                                            final lVFavoritosProductoRecord =
+                                                lVFavoritosProductoRecordList[
+                                                    lVFavoritosIndex];
+                                            return Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 20.0, 20.0, 0.0),
+                                              child: Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(15.0),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      15.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      15.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                            ),
+                                                            child:
+                                                                Image.network(
+                                                              lVFavoritosProductoRecord
+                                                                  .imagenProducto!,
+                                                              width: 100.0,
+                                                              height: 100.0,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceAround,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'np1s7j4g' /* Nombre: */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Outfit',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      children: [
+                                                                        Text(
+                                                                          lVFavoritosProductoRecord
+                                                                              .nombreProducto!,
+                                                                          textAlign:
+                                                                              TextAlign.start,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'tx7g4cy5' /* Precio: */,
+                                                                      ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .start,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Outfit',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                          ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Text(
+                                                                          lVFavoritosProductoRecord
+                                                                              .precioProducto!
+                                                                              .toString(),
+                                                                          textAlign:
+                                                                              TextAlign.start,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Outfit',
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),

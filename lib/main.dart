@@ -19,6 +19,7 @@ void main() async {
   await initFirebase();
 
   await FlutterFlowTheme.initialize();
+  await FFLocalizations.initialize();
 
   runApp(MyApp());
 }
@@ -33,7 +34,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale? _locale;
+  Locale? _locale = FFLocalizations.getStoredLocale();
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late Stream<TabaritoMeseroFirebaseUser> userStream;
@@ -66,6 +67,7 @@ class _MyAppState extends State<MyApp> {
 
   void setLocale(String language) {
     setState(() => _locale = createLocale(language));
+    FFLocalizations.storeLocale(language);
   }
 
   void setThemeMode(ThemeMode mode) => setState(() {
@@ -84,7 +86,12 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       locale: _locale,
-      supportedLocales: const [Locale('en', '')],
+      supportedLocales: const [
+        Locale('es'),
+        Locale('en'),
+        Locale('ru'),
+        Locale('pt'),
+      ],
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,

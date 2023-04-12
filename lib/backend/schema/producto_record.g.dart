@@ -78,6 +78,16 @@ class _$ProductoRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.favoritos;
+    if (value != null) {
+      result
+        ..add('Favoritos')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -135,6 +145,13 @@ class _$ProductoRecordSerializer
           result.nombreComboCombo = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'Favoritos':
+          result.favoritos.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -166,6 +183,8 @@ class _$ProductoRecord extends ProductoRecord {
   @override
   final String? nombreComboCombo;
   @override
+  final BuiltList<DocumentReference<Object?>>? favoritos;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$ProductoRecord([void Function(ProductoRecordBuilder)? updates]) =>
@@ -180,6 +199,7 @@ class _$ProductoRecord extends ProductoRecord {
       this.esActivoProducto,
       this.referenciaListaDeProductos,
       this.nombreComboCombo,
+      this.favoritos,
       this.ffRef})
       : super._();
 
@@ -203,6 +223,7 @@ class _$ProductoRecord extends ProductoRecord {
         esActivoProducto == other.esActivoProducto &&
         referenciaListaDeProductos == other.referenciaListaDeProductos &&
         nombreComboCombo == other.nombreComboCombo &&
+        favoritos == other.favoritos &&
         ffRef == other.ffRef;
   }
 
@@ -217,6 +238,7 @@ class _$ProductoRecord extends ProductoRecord {
     _$hash = $jc(_$hash, esActivoProducto.hashCode);
     _$hash = $jc(_$hash, referenciaListaDeProductos.hashCode);
     _$hash = $jc(_$hash, nombreComboCombo.hashCode);
+    _$hash = $jc(_$hash, favoritos.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -233,6 +255,7 @@ class _$ProductoRecord extends ProductoRecord {
           ..add('esActivoProducto', esActivoProducto)
           ..add('referenciaListaDeProductos', referenciaListaDeProductos)
           ..add('nombreComboCombo', nombreComboCombo)
+          ..add('favoritos', favoritos)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -283,6 +306,12 @@ class ProductoRecordBuilder
   set nombreComboCombo(String? nombreComboCombo) =>
       _$this._nombreComboCombo = nombreComboCombo;
 
+  ListBuilder<DocumentReference<Object?>>? _favoritos;
+  ListBuilder<DocumentReference<Object?>> get favoritos =>
+      _$this._favoritos ??= new ListBuilder<DocumentReference<Object?>>();
+  set favoritos(ListBuilder<DocumentReference<Object?>>? favoritos) =>
+      _$this._favoritos = favoritos;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -302,6 +331,7 @@ class ProductoRecordBuilder
       _esActivoProducto = $v.esActivoProducto;
       _referenciaListaDeProductos = $v.referenciaListaDeProductos;
       _nombreComboCombo = $v.nombreComboCombo;
+      _favoritos = $v.favoritos?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -323,17 +353,31 @@ class ProductoRecordBuilder
   ProductoRecord build() => _build();
 
   _$ProductoRecord _build() {
-    final _$result = _$v ??
-        new _$ProductoRecord._(
-            nombreProducto: nombreProducto,
-            precioProducto: precioProducto,
-            tipoProducto: tipoProducto,
-            imagenProducto: imagenProducto,
-            obsrvProducto: obsrvProducto,
-            esActivoProducto: esActivoProducto,
-            referenciaListaDeProductos: referenciaListaDeProductos,
-            nombreComboCombo: nombreComboCombo,
-            ffRef: ffRef);
+    _$ProductoRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$ProductoRecord._(
+              nombreProducto: nombreProducto,
+              precioProducto: precioProducto,
+              tipoProducto: tipoProducto,
+              imagenProducto: imagenProducto,
+              obsrvProducto: obsrvProducto,
+              esActivoProducto: esActivoProducto,
+              referenciaListaDeProductos: referenciaListaDeProductos,
+              nombreComboCombo: nombreComboCombo,
+              favoritos: _favoritos?.build(),
+              ffRef: ffRef);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'favoritos';
+        _favoritos?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'ProductoRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

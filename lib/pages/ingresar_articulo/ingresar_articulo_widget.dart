@@ -66,7 +66,9 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
             },
           ),
           title: Text(
-            'Ingresar Pedido',
+            FFLocalizations.of(context).getText(
+              '0vql8vkc' /* Ingresar Pedido */,
+            ),
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondary,
@@ -122,7 +124,9 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Hamburguesa sencilla',
+                        FFLocalizations.of(context).getText(
+                          'qrbiia6u' /* Hamburguesa sencilla */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Outfit',
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -137,7 +141,9 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      '¢2000',
+                      FFLocalizations.of(context).getText(
+                        'm1q1o2k5' /* ¢2000 */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Outfit',
@@ -169,7 +175,9 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
-                              hintText: 'Indicaciones',
+                              hintText: FFLocalizations.of(context).getText(
+                                'wbxnu33j' /* Indicaciones */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -297,7 +305,9 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
                         onPressed: () {
                           print('Button pressed ...');
                         },
-                        text: 'Agregar a pedido',
+                        text: FFLocalizations.of(context).getText(
+                          'cbaf61yr' /* Agregar a pedido */,
+                        ),
                         options: FFButtonOptions(
                           width: 250.0,
                           height: 50.0,

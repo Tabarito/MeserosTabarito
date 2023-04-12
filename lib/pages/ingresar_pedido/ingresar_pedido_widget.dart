@@ -67,7 +67,9 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
             },
           ),
           title: Text(
-            'Ingresar Pedido',
+            FFLocalizations.of(context).getText(
+              '4et2uyrv' /* Ingresar Pedido */,
+            ),
             style: FlutterFlowTheme.of(context).titleMedium.override(
                   fontFamily: 'Outfit',
                   color: FlutterFlowTheme.of(context).secondary,
@@ -123,13 +125,27 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                               controller: _model.dropDownController ??=
                                   FormFieldController<String>(null),
                               options: [
-                                'Mesa #1',
-                                'Mesa #2',
-                                'Mesa #3',
-                                'Mesa #4',
-                                'Mesa #5',
-                                'Mesa #6',
-                                'Mesa #7'
+                                FFLocalizations.of(context).getText(
+                                  'z5lzdc6f' /* Mesa #1 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'v6w2q2sw' /* Mesa #2 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'hs7sy0h5' /* Mesa #3 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'cmhp47l3' /* Mesa #4 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'yo6ms7ti' /* Mesa #5 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '0hbrt663' /* Mesa #6 */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '2emleh5v' /* Mesa #7 */,
+                                )
                               ],
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue = val),
@@ -142,7 +158,9 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                   ),
-                              hintText: 'Seleccione la mesa',
+                              hintText: FFLocalizations.of(context).getText(
+                                '9uc0e9fg' /* Seleccione la mesa */,
+                              ),
                               fillColor: FlutterFlowTheme.of(context).primary,
                               elevation: 2.0,
                               borderColor: Colors.transparent,
@@ -248,7 +266,10 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                       ),
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'Buscar...',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'p7n43n8w' /* Buscar... */,
+                                        ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
@@ -332,13 +353,19 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                           indicatorColor: FlutterFlowTheme.of(context).tertiary,
                           tabs: [
                             Tab(
-                              text: 'Comidas',
+                              text: FFLocalizations.of(context).getText(
+                                'h1cgkw0b' /* Comidas */,
+                              ),
                             ),
                             Tab(
-                              text: 'Bebidas',
+                              text: FFLocalizations.of(context).getText(
+                                'glvnqydr' /* Bebidas */,
+                              ),
                             ),
                             Tab(
-                              text: 'Combos',
+                              text: FFLocalizations.of(context).getText(
+                                'zz4ndv77' /* Combos */,
+                              ),
                             ),
                           ],
                         ),
@@ -421,7 +448,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Hamburguesa sencilla',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'fut4bye3' /* Hamburguesa sencilla */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -438,7 +469,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               ),
                                                         ),
                                                         Text(
-                                                          '₡ 2000 ',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'nyvfqod9' /* ₡ 2000  */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -513,7 +548,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Sándwich de carne',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '4g0g0ct7' /* Sándwich de carne */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -530,7 +569,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               ),
                                                         ),
                                                         Text(
-                                                          '₡ 2000 ',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'hvhhltz7' /* ₡ 2000  */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -605,7 +648,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               .start,
                                                       children: [
                                                         Text(
-                                                          'Sándwich de pollo',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'jamjcvkv' /* Sándwich de pollo */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -622,7 +669,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                               ),
                                                         ),
                                                         Text(
-                                                          '₡ 2000 ',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'dsh4wlr1' /* ₡ 2000  */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -697,7 +748,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Casado',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'ee6ia5vc' /* Casado */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -723,7 +778,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '3500 ₡',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '4f1u0e5k' /* 3500 ₡ */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -802,7 +861,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Pinto con huevo',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '7smq8wd7' /* Pinto con huevo */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -828,7 +891,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '2500 ₡',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'txryqo16' /* 2500 ₡ */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -907,7 +974,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Papas',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '8tamkg48' /* Papas */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -933,7 +1004,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '2000 ₡',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'z6xz33io' /* 2000 ₡ */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -1012,7 +1087,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Entradas de comida',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'e3na5r5b' /* Entradas de comida */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -1038,7 +1117,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          '1500 ₡',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'cy8x2j1p' /* 1500 ₡ */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .titleMedium
@@ -1125,7 +1208,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'Gaseosas',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '2cje8jst' /* Gaseosas */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1153,7 +1240,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '₡ 1000',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'gfw3bck7' /* ₡ 1000 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1233,7 +1324,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'Natural Sandia',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '56lhyno3' /* Natural Sandia */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1261,7 +1356,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '₡ 1200',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'yfkemgjs' /* ₡ 1200 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1341,7 +1440,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'Natural Fresa',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'kg0pa0g4' /* Natural Fresa */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1369,7 +1472,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '₡ 1200',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '8smtm6ko' /* ₡ 1200 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1449,7 +1556,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'Café',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'hv6lt64i' /* Café */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1477,7 +1588,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '₡ 1000',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'rxyv4imz' /* ₡ 1000 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1555,7 +1670,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        'Batidos',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'rw0ehs0w' /* Batidos */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1583,7 +1702,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '₡ 1400',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'ciglupuu' /* ₡ 1400 */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1662,7 +1785,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Combo 1',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '9wyci3pc' /* Combo 1 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1686,7 +1813,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '₡ 5500',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '0jtuelp5' /* ₡ 5500 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1758,7 +1889,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Combo 2',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'eedwmy3b' /* Combo 2 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1782,7 +1917,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '₡ 6000',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'brwg1w6u' /* ₡ 6000 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1856,7 +1995,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Combo 3',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'goq3fvu8' /* Combo 3 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1880,7 +2023,11 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             .fromSTEB(16.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '₡ 3500',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'pexj9pbe' /* ₡ 3500 */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

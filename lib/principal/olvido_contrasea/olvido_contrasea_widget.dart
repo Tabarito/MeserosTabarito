@@ -61,7 +61,9 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
           },
         ),
         title: Text(
-          'Restablecer contraseña',
+          FFLocalizations.of(context).getText(
+            'hy47ettb' /* Restablecer contraseña */,
+          ),
           style: FlutterFlowTheme.of(context).titleMedium.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).secondary,
@@ -83,7 +85,9 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                 children: [
                   Expanded(
                     child: Text(
-                      'Enviaremos un correo con un enlace para restablecer su contraseña, por favor ingrese su correo asociado a la cuenta que desea restablecer la contraseña en el siguiente campo de texto.',
+                      FFLocalizations.of(context).getText(
+                        'q62bs9uh' /* Enviaremos un correo con un en... */,
+                      ),
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
@@ -97,12 +101,16 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                 controller: _model.emailAddressController,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Su dirección de correo electronico...',
+                  labelText: FFLocalizations.of(context).getText(
+                    'snhi53vh' /* Su dirección de correo electro... */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Outfit',
                         color: Color(0xFF95A1AC),
                       ),
-                  hintText: 'Ingrese su correo electronico...',
+                  hintText: FFLocalizations.of(context).getText(
+                    '4v5ci7di' /* Ingrese su correo electronico.... */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Lexend Deca',
                         color: Color(0xFF95A1AC),
@@ -218,7 +226,9 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                     context.pushNamedAuth('Inicio', mounted);
                   }
                 },
-                text: 'Enviar enlace',
+                text: FFLocalizations.of(context).getText(
+                  'dg8a2wch' /* Enviar enlace */,
+                ),
                 options: FFButtonOptions(
                   width: 270.0,
                   height: 50.0,
@@ -262,7 +272,9 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
 
                   context.pushNamed('Inicio');
                 },
-                text: 'Cancelar',
+                text: FFLocalizations.of(context).getText(
+                  '27464aqx' /* Cancelar */,
+                ),
                 options: FFButtonOptions(
                   width: 200.0,
                   height: 40.0,
