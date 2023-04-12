@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "500609488516",
+    "project_id": "tabaritomovil-b9c7f",
+    "storage_bucket": "tabaritomovil-b9c7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500609488516:android:4cda073bca547bb15554d1",
+        "android_client_info": {
+          "package_name": "com.mycompany.tabaritomesero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500609488516-6cveq4ukmf3fc32epkusqousrh63nusl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.tabaritomesero",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "500609488516-dfqa0d089ujemqbgese4bsnh6iba29v6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvYyhThovDG46-hyBFp9CDa172ZkgXtYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500609488516-dfqa0d089ujemqbgese4bsnh6iba29v6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500609488516-im8rqfqcsefirgjuvn354mfetmcj1nup.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.tabaritomesero"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500609488516:android:b7b524d9e8c531465554d1",
+        "android_client_info": {
+          "package_name": "com.shidalgo70352.tabarito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500609488516-o59hefue6nj99pnhb56mnsdkrtqi6iu4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shidalgo70352.tabarito",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "500609488516-dfqa0d089ujemqbgese4bsnh6iba29v6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvYyhThovDG46-hyBFp9CDa172ZkgXtYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500609488516-dfqa0d089ujemqbgese4bsnh6iba29v6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "500609488516-im8rqfqcsefirgjuvn354mfetmcj1nup.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.tabaritomesero"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

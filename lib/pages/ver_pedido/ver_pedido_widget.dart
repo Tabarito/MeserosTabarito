@@ -1,6 +1,6 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,53 +39,53 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        automaticallyImplyLeading: false,
-        leading: InkWell(
-          onTap: () async {
-            context.pop();
-          },
-          child: Icon(
-            Icons.arrow_back,
-            color: FlutterFlowTheme.of(context).secondaryColor,
-            size: 20,
-          ),
-        ),
-        title: Text(
-          'Pedido',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Outfit',
-                color: FlutterFlowTheme.of(context).secondaryColor,
-                fontSize: 18,
-              ),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-            child: Container(
-              width: 80,
-              height: 80,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-              child: Image.network(
-                'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                fit: BoxFit.scaleDown,
-              ),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          automaticallyImplyLeading: false,
+          leading: InkWell(
+            onTap: () async {
+              context.pop();
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: FlutterFlowTheme.of(context).secondary,
+              size: 20.0,
             ),
           ),
-        ],
-        centerTitle: true,
-        elevation: 2,
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          title: Text(
+            'Pedido',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).secondary,
+                  fontSize: 18.0,
+                ),
+          ),
+          actions: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+              child: Container(
+                width: 80.0,
+                height: 80.0,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Image.network(
+                  'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
+            ),
+          ],
+          centerTitle: true,
+          elevation: 2.0,
+        ),
+        body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -94,7 +94,7 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                   width: double.infinity,
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryColor,
+                    color: FlutterFlowTheme.of(context).primary,
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -107,38 +107,39 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 20.0, 0.0, 0.0),
                                 child: Image.asset(
                                   'assets/images/Logo_en_gris_Tipo_Lavishly.png',
-                                  width: 160,
-                                  height: 105,
+                                  width: 160.0,
+                                  height: 105.0,
                                   fit: BoxFit.scaleDown,
                                 ),
                               ),
                             ],
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(40, 0, 40, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                40.0, 0.0, 40.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 20, 0, 0),
+                                        0.0, 20.0, 0.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
-                                      height: 500,
+                                      height: 500.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        borderRadius: BorderRadius.circular(10),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 20),
+                                            20.0, 20.0, 20.0, 20.0),
                                         child: ListView(
                                           padding: EdgeInsets.zero,
                                           scrollDirection: Axis.vertical,
@@ -148,7 +149,7 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyText1
+                                                      .bodyMedium
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                         color:
@@ -172,7 +173,7 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    25, 25, 5, 0),
+                                    25.0, 25.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
@@ -180,34 +181,38 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                   text: '',
                                   icon: Icon(
                                     Icons.fastfood_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                    size: 15,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 15.0,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 50,
-                                    height: 40,
-                                    color: FlutterFlowTheme.of(context)
-                                        .tertiaryColor,
+                                    width: 50.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                     textStyle: FlutterFlowTheme.of(context)
-                                        .subtitle2
+                                        .titleSmall
                                         .override(
                                           fontFamily: 'Outfit',
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 16.0,
                                         ),
-                                    elevation: 5,
+                                    elevation: 5.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 25, 5, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 25.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed('ingresarPedido');
@@ -215,34 +220,38 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                   text: '',
                                   icon: Icon(
                                     Icons.edit_road,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                    size: 20,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 20.0,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 50,
-                                    height: 40,
-                                    color: FlutterFlowTheme.of(context)
-                                        .tertiaryColor,
+                                    width: 50.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        3.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                     textStyle: FlutterFlowTheme.of(context)
-                                        .subtitle2
+                                        .titleSmall
                                         .override(
                                           fontFamily: 'Outfit',
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 16.0,
                                         ),
-                                    elevation: 5,
+                                    elevation: 5.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    5, 25, 25, 0),
+                                    5.0, 25.0, 25.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed('Principal');
@@ -250,28 +259,32 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                   text: '',
                                   icon: Icon(
                                     Icons.delete_forever,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                    size: 15,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 15.0,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 50,
-                                    height: 40,
-                                    color: FlutterFlowTheme.of(context)
-                                        .tertiaryColor,
+                                    width: 50.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                     textStyle: FlutterFlowTheme.of(context)
-                                        .subtitle2
+                                        .titleSmall
                                         .override(
                                           fontFamily: 'Outfit',
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 16.0,
                                         ),
-                                    elevation: 5,
+                                    elevation: 5.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
@@ -21,6 +22,8 @@ export 'dart:math' show min, max;
 export 'dart:typed_data' show Uint8List;
 export 'dart:convert' show jsonEncode, jsonDecode;
 export 'package:intl/intl.dart';
+export 'package:cloud_firestore/cloud_firestore.dart'
+    show DocumentReference, FirebaseFirestore;
 export 'package:page_transition/page_transition.dart';
 export 'nav/nav.dart';
 
@@ -34,7 +37,7 @@ String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {
   if (format == 'relative') {
     return timeago.format(dateTime, locale: locale);
   }
-  return DateFormat(format).format(dateTime);
+  return DateFormat(format, locale).format(dateTime);
 }
 
 Future launchURL(String url) async {
@@ -131,6 +134,13 @@ String formatNumber(
 }
 
 DateTime get getCurrentTimestamp => DateTime.now();
+DateTime dateTimeFromSecondsSinceEpoch(int seconds) {
+  return DateTime.fromMillisecondsSinceEpoch(seconds * 1000);
+}
+
+extension DateTimeConversionExtension on DateTime {
+  int get secondsSinceEpoch => (millisecondsSinceEpoch / 1000).round();
+}
 
 extension DateTimeComparisonOperators on DateTime {
   bool operator <(DateTime other) => isBefore(other);
@@ -207,6 +217,10 @@ extension IterableExt<T> on Iterable<T> {
       .map((index, value) => MapEntry(index, func(index, value)))
       .values
       .toList();
+}
+
+extension StringDocRef on String {
+  DocumentReference get ref => FirebaseFirestore.instance.doc(this);
 }
 
 void setAppLanguage(BuildContext context, String language) =>
