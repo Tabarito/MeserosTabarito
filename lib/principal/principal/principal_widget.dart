@@ -349,7 +349,7 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                                             ),
                                             direction: Axis.horizontal,
                                             initialRating:
-                                                _model.ratingBarValue ??= 3.0,
+                                                _model.ratingBarValue ??= 1.0,
                                             unratedColor:
                                                 FlutterFlowTheme.of(context)
                                                     .gray200,

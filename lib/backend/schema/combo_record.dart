@@ -21,6 +21,9 @@ abstract class ComboRecord implements Built<ComboRecord, ComboRecordBuilder> {
 
   String? get obsrvCombo;
 
+  @BuiltValueField(wireName: 'Favoritos')
+  BuiltList<DocumentReference>? get favoritos;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -31,7 +34,8 @@ abstract class ComboRecord implements Built<ComboRecord, ComboRecordBuilder> {
     ..esActivoCombo = false
     ..imagenCombo = ''
     ..listaProductoCombo = ListBuilder()
-    ..obsrvCombo = '';
+    ..obsrvCombo = ''
+    ..favoritos = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Combo');
@@ -70,7 +74,8 @@ Map<String, dynamic> createComboRecordData({
         ..esActivoCombo = esActivoCombo
         ..imagenCombo = imagenCombo
         ..listaProductoCombo = null
-        ..obsrvCombo = obsrvCombo,
+        ..obsrvCombo = obsrvCombo
+        ..favoritos = null,
     ),
   );
 

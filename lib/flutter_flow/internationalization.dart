@@ -169,7 +169,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4et2uyrv': {
       'es': 'Ingresar Pedido',
       'en': 'Enter Order',
-      'pt': 'Inserir pedido',
+      'pt': 'Inserir Pedido',
       'ru': 'Введите заказ',
     },
     'z5lzdc6f': {
@@ -247,7 +247,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4g0g0ct7': {
       'es': 'Sándwich de carne',
       'en': 'Meat sandwich',
-      'pt': 'sanduíche de carne',
+      'pt': 'Sanduíche de carne',
       'ru': 'Сэндвич с мясом',
     },
     'hvhhltz7': {
@@ -453,9 +453,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '403b1d7o': {
       'es': '¿Por favor podrías valorar nuestra aplicación?',
-      'en': '',
-      'pt': '',
-      'ru': '',
+      'en': 'Could you please rate our app?',
+      'pt': 'Você poderia avaliar nosso aplicativo?',
+      'ru': 'Не могли бы вы оценить наше приложение?',
     },
     'dxlnb6ed': {
       'es': 'Cerrar sesión',
@@ -496,7 +496,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0vql8vkc': {
       'es': 'Ingresar Pedido',
       'en': 'Enter Order',
-      'pt': 'Inserir Pedido',
+      'pt': 'Inserir pedido',
       'ru': 'Введите заказ',
     },
     'qrbiia6u': {
@@ -546,7 +546,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'Enviaremos um e-mail com um link para redefinir sua senha, digite seu e-mail associado à conta que deseja redefinir a senha no campo de texto abaixo.',
       'ru':
-          'Мы отправим электронное письмо со ссылкой для сброса пароля. Введите адрес электронной почты, связанный с учетной записью, для которой вы хотите сбросить пароль, в текстовое поле ниже.',
+          'Мы отправим электронное письмо со ссылкой для сброса пароля. Введите адрес электронной почты, связанный с учетной записью, для которой вы хотите сбросить пароль, в следующее текстовое поле.',
     },
     'snhi53vh': {
       'es': 'Su dirección de correo electronico...',
@@ -635,11 +635,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
-    '3vp4kjie': {
-      'es': 'Favoritos',
-      'en': '',
-      'pt': '',
-      'ru': '',
+    'ofsy12ts': {
+      'es': 'Productos Favoritos',
+      'en': 'Favorite Products',
+      'pt': 'Produtos favoritos',
+      'ru': 'Любимые продукты',
     },
     'np1s7j4g': {
       'es': 'Nombre:',
@@ -648,6 +648,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Имя:',
     },
     'tx7g4cy5': {
+      'es': 'Precio:',
+      'en': 'Price:',
+      'pt': 'Preço:',
+      'ru': 'Цена:',
+    },
+    'xwpp14ww': {
+      'es': 'Combos Favoritos',
+      'en': 'Favorite Combos',
+      'pt': 'Combos favoritos',
+      'ru': 'Любимые комбинации',
+    },
+    'swjk6y10': {
       'es': 'Precio:',
       'en': 'Price:',
       'pt': 'Preço:',

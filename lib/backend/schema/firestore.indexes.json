@@ -1,3 +1,18 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "Combo",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Favoritos",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "nombreCombo",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
 }

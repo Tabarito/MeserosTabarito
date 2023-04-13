@@ -145,7 +145,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: DefaultTabController(
-                  length: 4,
+                  length: 5,
                   initialIndex: 0,
                   child: Column(
                     children: [
@@ -155,7 +155,8 @@ class _ProductosWidgetState extends State<ProductosWidget>
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Outfit',
-                                  fontSize: 18.0,
+                                  fontSize: 20.0,
+                                  letterSpacing: 1.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                         indicatorColor: FlutterFlowTheme.of(context).tertiary,
@@ -177,7 +178,12 @@ class _ProductosWidgetState extends State<ProductosWidget>
                           ),
                           Tab(
                             text: FFLocalizations.of(context).getText(
-                              '3vp4kjie' /* Favoritos */,
+                              'ofsy12ts' /* Productos Favoritos */,
+                            ),
+                          ),
+                          Tab(
+                            text: FFLocalizations.of(context).getText(
+                              'xwpp14ww' /* Combos Favoritos */,
                             ),
                           ),
                         ],
@@ -314,7 +320,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                               MainAxisSize.max,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
-                                                                  .spaceBetween,
+                                                                  .spaceAround,
                                                           children: [
                                                             Padding(
                                                               padding:
@@ -413,77 +419,64 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                 ],
                                                               ),
                                                             ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  ToggleIcon(
-                                                                    onPressed:
-                                                                        () async {
-                                                                      final favoritosElement =
-                                                                          currentUserReference;
-                                                                      final favoritosUpdate = lVComidaProductoRecord
-                                                                              .favoritos!
-                                                                              .toList()
-                                                                              .contains(
-                                                                                  favoritosElement)
-                                                                          ? FieldValue
-                                                                              .arrayRemove([
-                                                                              favoritosElement
-                                                                            ])
-                                                                          : FieldValue
-                                                                              .arrayUnion([
-                                                                              favoritosElement
-                                                                            ]);
-                                                                      final productoUpdateData =
-                                                                          {
-                                                                        'Favoritos':
-                                                                            favoritosUpdate,
-                                                                      };
-                                                                      await lVComidaProductoRecord
-                                                                          .reference
-                                                                          .update(
-                                                                              productoUpdateData);
-                                                                    },
-                                                                    value: lVComidaProductoRecord
-                                                                        .favoritos!
-                                                                        .toList()
-                                                                        .contains(
-                                                                            currentUserReference),
-                                                                    onIcon:
-                                                                        Icon(
-                                                                      Icons
-                                                                          .favorite,
-                                                                      color: Color(
-                                                                          0xFFFF0000),
-                                                                      size:
-                                                                          25.0,
-                                                                    ),
-                                                                    offIcon:
-                                                                        Icon(
-                                                                      Icons
-                                                                          .favorite_border,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          25.0,
-                                                                    ),
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                ToggleIcon(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    final favoritosElement =
+                                                                        currentUserReference;
+                                                                    final favoritosUpdate = lVComidaProductoRecord
+                                                                            .favoritos!
+                                                                            .toList()
+                                                                            .contains(
+                                                                                favoritosElement)
+                                                                        ? FieldValue
+                                                                            .arrayRemove([
+                                                                            favoritosElement
+                                                                          ])
+                                                                        : FieldValue
+                                                                            .arrayUnion([
+                                                                            favoritosElement
+                                                                          ]);
+                                                                    final productoUpdateData =
+                                                                        {
+                                                                      'Favoritos':
+                                                                          favoritosUpdate,
+                                                                    };
+                                                                    await lVComidaProductoRecord
+                                                                        .reference
+                                                                        .update(
+                                                                            productoUpdateData);
+                                                                  },
+                                                                  value: lVComidaProductoRecord
+                                                                      .favoritos!
+                                                                      .toList()
+                                                                      .contains(
+                                                                          currentUserReference),
+                                                                  onIcon: Icon(
+                                                                    Icons
+                                                                        .favorite,
+                                                                    color: Color(
+                                                                        0xFFFF0000),
+                                                                    size: 25.0,
                                                                   ),
-                                                                ],
-                                                              ),
+                                                                  offIcon: Icon(
+                                                                    Icons
+                                                                        .favorite_border,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 25.0,
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ],
                                                         ),
@@ -627,7 +620,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                               MainAxisSize.max,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
-                                                                  .center,
+                                                                  .spaceAround,
                                                           children: [
                                                             Padding(
                                                               padding:
@@ -727,6 +720,65 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                   ),
                                                                 ],
                                                               ),
+                                                            ),
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                ToggleIcon(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    final favoritosElement =
+                                                                        currentUserReference;
+                                                                    final favoritosUpdate = lVBebidaProductoRecord
+                                                                            .favoritos!
+                                                                            .toList()
+                                                                            .contains(
+                                                                                favoritosElement)
+                                                                        ? FieldValue
+                                                                            .arrayRemove([
+                                                                            favoritosElement
+                                                                          ])
+                                                                        : FieldValue
+                                                                            .arrayUnion([
+                                                                            favoritosElement
+                                                                          ]);
+                                                                    final productoUpdateData =
+                                                                        {
+                                                                      'Favoritos':
+                                                                          favoritosUpdate,
+                                                                    };
+                                                                    await lVBebidaProductoRecord
+                                                                        .reference
+                                                                        .update(
+                                                                            productoUpdateData);
+                                                                  },
+                                                                  value: lVBebidaProductoRecord
+                                                                      .favoritos!
+                                                                      .toList()
+                                                                      .contains(
+                                                                          currentUserReference),
+                                                                  onIcon: Icon(
+                                                                    Icons
+                                                                        .favorite,
+                                                                    color: Color(
+                                                                        0xFFFF0000),
+                                                                    size: 25.0,
+                                                                  ),
+                                                                  offIcon: Icon(
+                                                                    Icons
+                                                                        .favorite_border,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 25.0,
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ],
                                                         ),
@@ -900,7 +952,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                           .max,
                                                                   mainAxisAlignment:
                                                                       MainAxisAlignment
-                                                                          .center,
+                                                                          .spaceAround,
                                                                   children: [
                                                                     Column(
                                                                       mainAxisSize:
@@ -973,6 +1025,55 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                     ),
                                                                               ),
                                                                             ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceEvenly,
+                                                                      children: [
+                                                                        ToggleIcon(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            final favoritosElement =
+                                                                                currentUserReference;
+                                                                            final favoritosUpdate = gridViewComboRecord.favoritos!.toList().contains(favoritosElement)
+                                                                                ? FieldValue.arrayRemove([
+                                                                                    favoritosElement
+                                                                                  ])
+                                                                                : FieldValue.arrayUnion([
+                                                                                    favoritosElement
+                                                                                  ]);
+                                                                            final comboUpdateData =
+                                                                                {
+                                                                              'Favoritos': favoritosUpdate,
+                                                                            };
+                                                                            await gridViewComboRecord.reference.update(comboUpdateData);
+                                                                          },
+                                                                          value: gridViewComboRecord
+                                                                              .favoritos!
+                                                                              .toList()
+                                                                              .contains(currentUserReference),
+                                                                          onIcon:
+                                                                              Icon(
+                                                                            Icons.favorite,
+                                                                            color:
+                                                                                Color(0xFFFF0000),
+                                                                            size:
+                                                                                25.0,
+                                                                          ),
+                                                                          offIcon:
+                                                                              Icon(
+                                                                            Icons.favorite_border,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                            size:
+                                                                                25.0,
                                                                           ),
                                                                         ),
                                                                       ],
@@ -1254,6 +1355,264 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                   ],
                                 ),
                               ),
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 20.0, 0.0, 0.0),
+                                    child: StreamBuilder<List<ComboRecord>>(
+                                      stream: queryComboRecord(
+                                        queryBuilder: (comboRecord) =>
+                                            comboRecord
+                                                .where('Favoritos',
+                                                    arrayContains:
+                                                        currentUserReference)
+                                                .orderBy('nombreCombo',
+                                                    descending: true),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitCubeGrid(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<ComboRecord>
+                                            gridViewComboRecordList =
+                                            snapshot.data!;
+                                        return GridView.builder(
+                                          padding: EdgeInsets.zero,
+                                          gridDelegate:
+                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2,
+                                            crossAxisSpacing: 10.0,
+                                            mainAxisSpacing: 10.0,
+                                            childAspectRatio: 1.0,
+                                          ),
+                                          scrollDirection: Axis.vertical,
+                                          itemCount:
+                                              gridViewComboRecordList.length,
+                                          itemBuilder:
+                                              (context, gridViewIndex) {
+                                            final gridViewComboRecord =
+                                                gridViewComboRecordList[
+                                                    gridViewIndex];
+                                            return InkWell(
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'DetalleCombo',
+                                                  queryParams: {
+                                                    'combo': serializeParam(
+                                                      gridViewComboRecord
+                                                          .reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Container(
+                                                width: 150.0,
+                                                height: 300.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Expanded(
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .only(
+                                                                bottomLeft: Radius
+                                                                    .circular(
+                                                                        0.0),
+                                                                bottomRight: Radius
+                                                                    .circular(
+                                                                        0.0),
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        12.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        12.0),
+                                                              ),
+                                                              child:
+                                                                  Image.network(
+                                                                gridViewComboRecord
+                                                                    .imagenCombo!,
+                                                                width: 100.0,
+                                                                height: 500.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  5.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceAround,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 100.0,
+                                                                height: 60.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                ),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceAround,
+                                                                  children: [
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceEvenly,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                gridViewComboRecord.nombreCombo!,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Outfit',
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'swjk6y10' /* Precio: */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Outfit',
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                gridViewComboRecord.precioCombo!.toString(),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Outfit',
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),

@@ -64,6 +64,16 @@ class _$ComboRecordSerializer implements StructuredSerializer<ComboRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.favoritos;
+    if (value != null) {
+      result
+        ..add('Favoritos')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -113,6 +123,13 @@ class _$ComboRecordSerializer implements StructuredSerializer<ComboRecord> {
           result.obsrvCombo = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'Favoritos':
+          result.favoritos.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -140,6 +157,8 @@ class _$ComboRecord extends ComboRecord {
   @override
   final String? obsrvCombo;
   @override
+  final BuiltList<DocumentReference<Object?>>? favoritos;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$ComboRecord([void Function(ComboRecordBuilder)? updates]) =>
@@ -152,6 +171,7 @@ class _$ComboRecord extends ComboRecord {
       this.imagenCombo,
       this.listaProductoCombo,
       this.obsrvCombo,
+      this.favoritos,
       this.ffRef})
       : super._();
 
@@ -172,6 +192,7 @@ class _$ComboRecord extends ComboRecord {
         imagenCombo == other.imagenCombo &&
         listaProductoCombo == other.listaProductoCombo &&
         obsrvCombo == other.obsrvCombo &&
+        favoritos == other.favoritos &&
         ffRef == other.ffRef;
   }
 
@@ -184,6 +205,7 @@ class _$ComboRecord extends ComboRecord {
     _$hash = $jc(_$hash, imagenCombo.hashCode);
     _$hash = $jc(_$hash, listaProductoCombo.hashCode);
     _$hash = $jc(_$hash, obsrvCombo.hashCode);
+    _$hash = $jc(_$hash, favoritos.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -198,6 +220,7 @@ class _$ComboRecord extends ComboRecord {
           ..add('imagenCombo', imagenCombo)
           ..add('listaProductoCombo', listaProductoCombo)
           ..add('obsrvCombo', obsrvCombo)
+          ..add('favoritos', favoritos)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -235,6 +258,12 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
   String? get obsrvCombo => _$this._obsrvCombo;
   set obsrvCombo(String? obsrvCombo) => _$this._obsrvCombo = obsrvCombo;
 
+  ListBuilder<DocumentReference<Object?>>? _favoritos;
+  ListBuilder<DocumentReference<Object?>> get favoritos =>
+      _$this._favoritos ??= new ListBuilder<DocumentReference<Object?>>();
+  set favoritos(ListBuilder<DocumentReference<Object?>>? favoritos) =>
+      _$this._favoritos = favoritos;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -252,6 +281,7 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
       _imagenCombo = $v.imagenCombo;
       _listaProductoCombo = $v.listaProductoCombo?.toBuilder();
       _obsrvCombo = $v.obsrvCombo;
+      _favoritos = $v.favoritos?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -283,12 +313,16 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
               imagenCombo: imagenCombo,
               listaProductoCombo: _listaProductoCombo?.build(),
               obsrvCombo: obsrvCombo,
+              favoritos: _favoritos?.build(),
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'listaProductoCombo';
         _listaProductoCombo?.build();
+
+        _$failedField = 'favoritos';
+        _favoritos?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ComboRecord', _$failedField, e.toString());
