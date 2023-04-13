@@ -230,7 +230,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comidas',
       'en': 'Foods',
       'pt': 'Alimentos',
-      'ru': 'Еда',
+      'ru': 'продукты',
     },
     'fut4bye3': {
       'es': 'Hamburguesa sencilla',
@@ -451,6 +451,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Produtos',
       'ru': 'Продукты',
     },
+    'q4tnljpu': {
+      'es': 'Pedidos',
+      'en': 'orders',
+      'pt': 'ordens',
+      'ru': 'заказы',
+    },
+    'fzzvft5q': {
+      'es': 'Orden',
+      'en': 'Order',
+      'pt': 'Ordem',
+      'ru': 'Заказ',
+    },
     '403b1d7o': {
       'es': '¿Por favor podrías valorar nuestra aplicación?',
       'en': 'Could you please rate our app?',
@@ -544,9 +556,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'We will send an email with a link to reset your password, please enter your email associated with the account you want to reset the password in the text field below.',
       'pt':
-          'Enviaremos um e-mail com um link para redefinir sua senha, digite seu e-mail associado à conta que deseja redefinir a senha no campo de texto abaixo.',
+          'Enviaremos um e-mail com um link para redefinir sua senha, digite seu e-mail associado à conta que deseja redefinir a senha no campo de texto a seguir.',
       'ru':
-          'Мы отправим электронное письмо со ссылкой для сброса пароля. Введите адрес электронной почты, связанный с учетной записью, для которой вы хотите сбросить пароль, в следующее текстовое поле.',
+          'Мы отправим электронное письмо со ссылкой для сброса пароля. Введите адрес электронной почты, связанный с учетной записью, для которой вы хотите сбросить пароль, в текстовое поле ниже.',
     },
     'snhi53vh': {
       'es': 'Su dirección de correo electronico...',
@@ -585,13 +597,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comidas',
       'en': 'Foods',
       'pt': 'Alimentos',
-      'ru': 'Еда',
+      'ru': 'продукты',
     },
     'wvc7f97z': {
       'es': 'Comidas',
       'en': 'Foods',
       'pt': 'Alimentos',
-      'ru': 'Еда',
+      'ru': 'продукты',
     },
     '7ur337lp': {
       'es': 'Nombre:',
@@ -665,6 +677,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
+    '7khs92vb': {
+      'es': 'Pedidos',
+      'en': 'orders',
+      'pt': 'ordens',
+      'ru': 'заказы',
+    },
+    'ogy839we': {
+      'es': 'Orden',
+      'en': 'Order',
+      'pt': 'Ordem',
+      'ru': 'Заказ',
+    },
     'sc6yk46z': {
       'es': 'Shop',
       'en': 'shop',
@@ -687,6 +711,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Цена:',
     },
     '9v9aafd1': {
+      'es': 'Home',
+      'en': 'home',
+      'pt': 'lar',
+      'ru': 'дом',
+    },
+  },
+  // Carrito
+  {
+    '1bgick2o': {
+      'es': 'Pedidos en carrito',
+      'en': 'cart orders',
+      'pt': 'pedidos de carrinho',
+      'ru': 'корзина заказов',
+    },
+    'qz27vj6o': {
+      'es': 'Valor:',
+      'en': 'Worth:',
+      'pt': 'Valor:',
+      'ru': 'Ценность:',
+    },
+    '8dxahz3e': {
+      'es': 'Productos',
+      'en': 'Products',
+      'pt': 'Produtos',
+      'ru': 'Продукты',
+    },
+    'nwm27sue': {
+      'es': 'Precio: ',
+      'en': 'Price:',
+      'pt': 'Preço:',
+      'ru': 'Цена:',
+    },
+    'oxngyd79': {
+      'es': 'Combos',
+      'en': 'combos',
+      'pt': 'combos',
+      'ru': 'комбо',
+    },
+    '2croye95': {
+      'es': 'Precio:',
+      'en': 'Price:',
+      'pt': 'Preço:',
+      'ru': 'Цена:',
+    },
+    'u7sn4yma': {
+      'es': 'Button',
+      'en': 'button',
+      'pt': 'botão',
+      'ru': 'кнопка',
+    },
+    'hm5nn1ya': {
+      'es': 'Home',
+      'en': 'home',
+      'pt': 'lar',
+      'ru': 'дом',
+    },
+  },
+  // Orden
+  {
+    'b4ivltdc': {
+      'es': 'Page Title',
+      'en': 'Page Title',
+      'pt': 'Título da página',
+      'ru': 'Заголовок страницы',
+    },
+    'irvwqv54': {
       'es': 'Home',
       'en': 'home',
       'pt': 'lar',

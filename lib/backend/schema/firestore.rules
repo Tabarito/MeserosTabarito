@@ -70,5 +70,17 @@ service cloud.firestore {
       allow write: if false;
       allow delete: if false;
     }
+
+    match /Producto/{parent}/SubProductos/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/SubProductos/{document} {
+      allow read: if true;
+    }
+
   }
 }

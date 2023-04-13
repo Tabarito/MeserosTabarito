@@ -9,9 +9,42 @@ import 'lat_lng.dart';
 import 'place.dart';
 import '../backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../auth/auth_util.dart';
+import '../../auth/firebase_auth/auth_util.dart';
 
 String calcularPorcentaje(String cantEstrellas) {
   double total = 100 / 5 * double.parse(cantEstrellas);
   return total.toString() + "%";
+}
+
+double sumarSubtotal(
+  double valorSubtotal,
+  double precio,
+) {
+  valorSubtotal = valorSubtotal + precio;
+  return valorSubtotal;
+}
+
+double restarSubtotal(
+  double valorSubtotal,
+  double precio,
+) {
+  if (valorSubtotal > 0) {
+    valorSubtotal = valorSubtotal - precio;
+  }
+  return valorSubtotal;
+}
+
+double totalEnLista(List<double> subTotal) {
+  double total = 0;
+  for (double add in subTotal) {
+    total += add;
+  }
+  return total;
+}
+
+double calcularSubTotal(
+  double precio,
+  int cantidad,
+) {
+  return precio * cantidad;
 }

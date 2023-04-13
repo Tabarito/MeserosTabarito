@@ -1,7 +1,7 @@
 import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../auth/auth_util.dart';
+import '../auth/firebase_auth/auth_util.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 
@@ -15,6 +15,7 @@ import 'schema/producto_record.dart';
 import 'schema/provincia_record.dart';
 import 'schema/canton_record.dart';
 import 'schema/distrito_record.dart';
+import 'schema/sub_productos_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -32,6 +33,7 @@ export 'schema/producto_record.dart';
 export 'schema/provincia_record.dart';
 export 'schema/canton_record.dart';
 export 'schema/distrito_record.dart';
+export 'schema/sub_productos_record.dart';
 
 /// Functions to query LoginRecords (as a Stream and as a Future).
 Future<int> queryLoginRecordCount({
@@ -547,6 +549,62 @@ Future<FFFirestorePage<DistritoRecord>> queryDistritoRecordPage({
     queryCollectionPage(
       DistritoRecord.collection,
       DistritoRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query SubProductosRecords (as a Stream and as a Future).
+Future<int> querySubProductosRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SubProductosRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SubProductosRecord>> querySubProductosRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SubProductosRecord.collection(parent),
+      SubProductosRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SubProductosRecord>> querySubProductosRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SubProductosRecord.collection(parent),
+      SubProductosRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<SubProductosRecord>> querySubProductosRecordPage({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      SubProductosRecord.collection(parent),
+      SubProductosRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

@@ -11,6 +11,7 @@ import 'producto_record.dart';
 import 'provincia_record.dart';
 import 'canton_record.dart';
 import 'distrito_record.dart';
+import 'sub_productos_record.dart';
 
 import 'index.dart';
 
@@ -31,6 +32,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   ProvinciaRecord,
   CantonRecord,
   DistritoRecord,
+  SubProductosRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())
@@ -215,6 +217,9 @@ Map<String, dynamic> mapToFirestore(Map<String, dynamic> data) =>
       }
       return MapEntry(key, value);
     });
+
+List<GeoPoint>? convertToGeoPointList(List<LatLng>? list) =>
+    list?.map((e) => e.toGeoPoint()).toList();
 
 extension GeoPointExtension on LatLng {
   GeoPoint toGeoPoint() => GeoPoint(latitude, longitude);

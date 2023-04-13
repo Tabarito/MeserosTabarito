@@ -7,7 +7,7 @@ import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
 import '../../backend/backend.dart';
 
-import '../../auth/firebase_user_provider.dart';
+import '../../auth/base_auth_user_provider.dart';
 
 import '../../index.dart';
 import '../../main.dart';
@@ -21,8 +21,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  TabaritoMeseroFirebaseUser? initialUser;
-  TabaritoMeseroFirebaseUser? user;
+  BaseAuthUser? initialUser;
+  BaseAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -47,7 +47,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(TabaritoMeseroFirebaseUser newUser) {
+  void update(BaseAuthUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -124,6 +124,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 combo: params.getParam(
                     'combo', ParamType.DocumentReference, false, ['Combo']),
               ),
+            ),
+            FFRoute(
+              name: 'Carrito',
+              path: 'carrito',
+              builder: (context, params) => CarritoWidget(),
+            ),
+            FFRoute(
+              name: 'Orden',
+              path: 'orden',
+              builder: (context, params) => OrdenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

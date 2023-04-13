@@ -122,7 +122,7 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 5.0, 0.0),
                             child: FlutterFlowDropDown<String>(
-                              controller: _model.dropDownController ??=
+                              controller: _model.dropDownValueController ??=
                                   FormFieldController<String>(null),
                               options: [
                                 FFLocalizations.of(context).getText(

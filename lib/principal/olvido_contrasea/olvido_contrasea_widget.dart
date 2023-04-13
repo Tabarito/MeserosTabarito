@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -197,7 +197,7 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                       );
                       return;
                     }
-                    await resetPassword(
+                    await authManager.resetPassword(
                       email: _model.emailAddressController.text,
                       context: context,
                     );
@@ -220,7 +220,7 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                       },
                     );
                     GoRouter.of(context).prepareAuthEvent();
-                    await signOut();
+                    await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
                     context.pushNamedAuth('Inicio', mounted);
