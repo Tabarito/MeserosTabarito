@@ -95,247 +95,276 @@ class _IngresarArticuloWidgetState extends State<IngresarArticuloWidget> {
           elevation: 2.0,
         ),
         body: SafeArea(
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Image.network(
-                        'https://lacostilladejuan.com/wp-content/uploads/2020/06/hamburguesa_sencilla_2.jpg',
-                        width: 200.0,
-                        height: 200.0,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 400.0,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                  child: Row(
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'qrbiia6u' /* Hamburguesa sencilla */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Outfit',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 20.0,
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.network(
+                              'https://lacostilladejuan.com/wp-content/uploads/2020/06/hamburguesa_sencilla_2.jpg',
+                              width: 200.0,
+                              height: 200.0,
+                              fit: BoxFit.cover,
                             ),
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      FFLocalizations.of(context).getText(
-                        'm1q1o2k5' /* ¢2000 */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            fontSize: 20.0,
                           ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              40.0, 25.0, 40.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.indicacionesController,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.of(context)
+                        ],
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'qrbiia6u' /* Hamburguesa sencilla */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
+                                    fontFamily: 'Outfit',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 20.0,
                                   ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'wbxnu33j' /* Indicaciones */,
-                              ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context).primary,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 24.0, 10.0, 24.0),
                             ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'm1q1o2k5' /* ¢2000 */,
+                            ),
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
-                                .titleSmall
+                                .bodyMedium
                                 .override(
                                   fontFamily: 'Outfit',
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.normal,
+                                  fontSize: 20.0,
                                 ),
-                            maxLines: 5,
-                            validator: _model.indicacionesControllerValidator
-                                .asValidator(context),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Material(
-                        color: Colors.transparent,
-                        elevation: 5.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                        child: Container(
-                          width: 160.0,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).tertiary,
-                            borderRadius: BorderRadius.circular(25.0),
-                            shape: BoxShape.rectangle,
-                            border: Border.all(
-                              color: Color(0xFF9E9E9E),
-                              width: 1.0,
-                            ),
-                          ),
-                          child: FlutterFlowCountController(
-                            decrementIconBuilder: (enabled) => FaIcon(
-                              FontAwesomeIcons.minus,
-                              color: enabled
-                                  ? FlutterFlowTheme.of(context).secondaryText
-                                  : Color(0xFFEEEEEE),
-                              size: 20.0,
-                            ),
-                            incrementIconBuilder: (enabled) => FaIcon(
-                              FontAwesomeIcons.plus,
-                              color: enabled
-                                  ? FlutterFlowTheme.of(context).secondaryText
-                                  : Color(0xFFEEEEEE),
-                              size: 20.0,
-                            ),
-                            countBuilder: (count) => Text(
-                              count.toString(),
-                              style: GoogleFonts.getFont(
-                                'Roboto',
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16.0,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    40.0, 25.0, 40.0, 0.0),
+                                child: TextFormField(
+                                  controller: _model.indicacionesController,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'wbxnu33j' /* Indicaciones */,
+                                    ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    filled: true,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 24.0, 10.0, 24.0),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  maxLines: 5,
+                                  validator: _model
+                                      .indicacionesControllerValidator
+                                      .asValidator(context),
+                                ),
                               ),
                             ),
-                            count: _model.countControllerValue ??= 0,
-                            updateCount: (count) => setState(
-                                () => _model.countControllerValue = count),
-                            stepSize: 1,
-                          ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'cbaf61yr' /* Agregar a pedido */,
-                        ),
-                        options: FFButtonOptions(
-                          width: 250.0,
-                          height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).tertiary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: 'Outfit',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 5.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25.0),
                               ),
-                          elevation: 5.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
-                          borderRadius: BorderRadius.circular(15.0),
+                              child: Container(
+                                width: 160.0,
+                                height: 50.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(
+                                    color: Color(0xFF9E9E9E),
+                                    width: 1.0,
+                                  ),
+                                ),
+                                child: FlutterFlowCountController(
+                                  decrementIconBuilder: (enabled) => FaIcon(
+                                    FontAwesomeIcons.minus,
+                                    color: enabled
+                                        ? FlutterFlowTheme.of(context)
+                                            .secondaryText
+                                        : Color(0xFFEEEEEE),
+                                    size: 20.0,
+                                  ),
+                                  incrementIconBuilder: (enabled) => FaIcon(
+                                    FontAwesomeIcons.plus,
+                                    color: enabled
+                                        ? FlutterFlowTheme.of(context)
+                                            .secondaryText
+                                        : Color(0xFFEEEEEE),
+                                    size: 20.0,
+                                  ),
+                                  countBuilder: (count) => Text(
+                                    count.toString(),
+                                    style: GoogleFonts.getFont(
+                                      'Roboto',
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                  count: _model.countControllerValue ??= 0,
+                                  updateCount: (count) => setState(() =>
+                                      _model.countControllerValue = count),
+                                  stepSize: 1,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'cbaf61yr' /* Agregar a pedido */,
+                              ),
+                              options: FFButtonOptions(
+                                width: 250.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                                elevation: 5.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

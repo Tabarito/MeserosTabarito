@@ -134,7 +134,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Авторизоваться',
     },
     'c1q9acl8': {
-      'es': '¿olvido su contraseña?',
+      'es': '¿Olvidó su contraseña?',
       'en': 'Forgot your password?',
       'pt': 'esqueceu sua senha?',
       'ru': 'Забыли пароль?',
@@ -464,7 +464,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Заказ',
     },
     '403b1d7o': {
-      'es': '¿Por favor podrías valorar nuestra aplicación?',
+      'es': '¿Por favor podrías\n valorar nuestra aplicación?',
       'en': 'Could you please rate our app?',
       'pt': 'Você poderia avaliar nosso aplicativo?',
       'ru': 'Не могли бы вы оценить наше приложение?',
@@ -552,7 +552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q62bs9uh': {
       'es':
-          'Enviaremos un correo con un enlace para restablecer su contraseña, por favor ingrese su correo asociado a la cuenta que desea restablecer la contraseña en el siguiente campo de texto.',
+          'Enviaremos un correo con un enlace para restablecer su contraseña. Por favor ingrese el correo asociado a la cuenta que a la que desea restablecer la contraseña, en el siguiente campo de texto.',
       'en':
           'We will send an email with a link to reset your password, please enter your email associated with the account you want to reset the password in the text field below.',
       'pt':
@@ -561,13 +561,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Мы отправим электронное письмо со ссылкой для сброса пароля. Введите адрес электронной почты, связанный с учетной записью, для которой вы хотите сбросить пароль, в текстовое поле ниже.',
     },
     'snhi53vh': {
-      'es': 'Su dirección de correo electronico...',
+      'es': 'Su dirección de correo electrónico...',
       'en': 'Your email address...',
       'pt': 'Seu endereço de correio eletrônico...',
       'ru': 'Ваш электронный адрес...',
     },
     '4v5ci7di': {
-      'es': 'Ingrese su correo electronico...',
+      'es': 'Ingrese su correo electrónico',
       'en': 'Enter your email...',
       'pt': 'Digite seu e-mail...',
       'ru': 'Введите адрес электронной почты...',
@@ -678,7 +678,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Цена:',
     },
     '7khs92vb': {
-      'es': 'Pedidos',
+      'es': 'Carrito',
       'en': 'orders',
       'pt': 'ordens',
       'ru': 'заказы',
@@ -726,10 +726,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'корзина заказов',
     },
     'qz27vj6o': {
-      'es': 'Valor:',
+      'es': 'Valor final de la compra:',
       'en': 'Worth:',
       'pt': 'Valor:',
       'ru': 'Ценность:',
+    },
+    'vz21hrrl': {
+      'es': '₡',
+      'en': '',
+      'pt': '',
+      'ru': '',
     },
     '8dxahz3e': {
       'es': 'Productos',
@@ -750,13 +756,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'комбо',
     },
     '2croye95': {
-      'es': 'Precio:',
+      'es': '₡',
+      'en': 'Price:',
+      'pt': 'Preço:',
+      'ru': 'Цена:',
+    },
+    'u7ewcwfn': {
+      'es': '₡',
       'en': 'Price:',
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
     'u7sn4yma': {
-      'es': 'Button',
+      'es': 'OK',
       'en': 'button',
       'pt': 'botão',
       'ru': 'кнопка',

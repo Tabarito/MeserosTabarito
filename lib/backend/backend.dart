@@ -16,6 +16,7 @@ import 'schema/provincia_record.dart';
 import 'schema/canton_record.dart';
 import 'schema/distrito_record.dart';
 import 'schema/sub_productos_record.dart';
+import 'schema/sub_combos_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -34,6 +35,7 @@ export 'schema/provincia_record.dart';
 export 'schema/canton_record.dart';
 export 'schema/distrito_record.dart';
 export 'schema/sub_productos_record.dart';
+export 'schema/sub_combos_record.dart';
 
 /// Functions to query LoginRecords (as a Stream and as a Future).
 Future<int> queryLoginRecordCount({
@@ -605,6 +607,62 @@ Future<FFFirestorePage<SubProductosRecord>> querySubProductosRecordPage({
     queryCollectionPage(
       SubProductosRecord.collection(parent),
       SubProductosRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query SubCombosRecords (as a Stream and as a Future).
+Future<int> querySubCombosRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SubCombosRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SubCombosRecord>> querySubCombosRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SubCombosRecord.collection(parent),
+      SubCombosRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SubCombosRecord>> querySubCombosRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SubCombosRecord.collection(parent),
+      SubCombosRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<SubCombosRecord>> querySubCombosRecordPage({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+    queryCollectionPage(
+      SubCombosRecord.collection(parent),
+      SubCombosRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

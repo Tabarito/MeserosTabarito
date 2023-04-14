@@ -88,72 +88,77 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
           elevation: 2.0,
         ),
         body: SafeArea(
-          child: Column(
+          child: Row(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primary,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Column(
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: 400.0,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                      ),
+                      child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Image.asset(
-                                  'assets/images/Logo_en_gris_Tipo_Lavishly.png',
-                                  width: 160.0,
-                                  height: 105.0,
-                                  fit: BoxFit.scaleDown,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                40.0, 0.0, 40.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 500.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
+                                    child: Image.asset(
+                                      'assets/images/Logo_en_gris_Tipo_Lavishly.png',
+                                      width: 160.0,
+                                      height: 105.0,
+                                      fit: BoxFit.scaleDown,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    40.0, 0.0, 40.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 20.0, 20.0, 20.0),
-                                        child: ListView(
-                                          padding: EdgeInsets.zero,
-                                          scrollDirection: Axis.vertical,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'oelq3nmi' /* Pedido #101 */,
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                            0.0, 20.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 500.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 20.0, 20.0, 20.0),
+                                            child: ListView(
+                                              padding: EdgeInsets.zero,
+                                              scrollDirection: Axis.vertical,
+                                              children: [
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'oelq3nmi' /* Pedido #101 */,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Outfit',
@@ -162,144 +167,153 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
                                                                     context)
                                                                 .secondaryText,
                                                       ),
+                                                ),
+                                              ],
                                             ),
-                                          ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    25.0, 25.0, 5.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: '',
-                                  icon: Icon(
-                                    Icons.fastfood_rounded,
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 50.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Colors.white,
-                                          fontSize: 16.0,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
+                                  ],
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 25.0, 5.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('ingresarPedido');
-                                  },
-                                  text: '',
-                                  icon: Icon(
-                                    Icons.edit_road,
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    size: 20.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 50.0,
-                                    height: 40.0,
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        3.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Colors.white,
-                                          fontSize: 16.0,
+                                        25.0, 25.0, 5.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () {
+                                        print('Button pressed ...');
+                                      },
+                                      text: '',
+                                      icon: Icon(
+                                        Icons.fastfood_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 15.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 50.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.white,
+                                              fontSize: 16.0,
+                                            ),
+                                        elevation: 5.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
                                         ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 25.0, 25.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('Principal');
-                                  },
-                                  text: '',
-                                  icon: Icon(
-                                    Icons.delete_forever,
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: 50.0,
-                                    height: 40.0,
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Colors.white,
-                                          fontSize: 16.0,
+                                        5.0, 25.0, 5.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed('ingresarPedido');
+                                      },
+                                      text: '',
+                                      icon: Icon(
+                                        Icons.edit_road,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 20.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 50.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                3.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.white,
+                                              fontSize: 16.0,
+                                            ),
+                                        elevation: 5.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
                                         ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 25.0, 25.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed('Principal');
+                                      },
+                                      text: '',
+                                      icon: Icon(
+                                        Icons.delete_forever,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        size: 15.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 50.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.white,
+                                              fontSize: 16.0,
+                                            ),
+                                        elevation: 5.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),

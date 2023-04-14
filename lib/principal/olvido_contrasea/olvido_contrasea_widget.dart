@@ -82,14 +82,25 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 30.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'q62bs9uh' /* Enviaremos un correo con un en... */,
+                  Container(
+                    width: 350.0,
+                    height: 89.6,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          'q62bs9uh' /* Enviaremos un correo con un en... */,
+                        ),
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodySmall,
                       ),
-                      textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).bodySmall,
                     ),
                   ),
                 ],
@@ -97,66 +108,70 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
-              child: TextFormField(
-                controller: _model.emailAddressController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: FFLocalizations.of(context).getText(
-                    'snhi53vh' /* Su dirección de correo electro... */,
+              child: Container(
+                width: 350.0,
+                child: TextFormField(
+                  controller: _model.emailAddressController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: FFLocalizations.of(context).getText(
+                      'snhi53vh' /* Su dirección de correo electró... */,
+                    ),
+                    labelStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Outfit',
+                          color: Color(0xFF95A1AC),
+                        ),
+                    hintText: FFLocalizations.of(context).getText(
+                      '4v5ci7di' /* Ingrese su correo electrónico */,
+                    ),
+                    hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF95A1AC),
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0.0,
+                      ),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0.0,
+                      ),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0.0,
+                      ),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0x00000000),
+                        width: 0.0,
+                      ),
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    contentPadding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
                   ),
-                  labelStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Outfit',
-                        color: Color(0xFF95A1AC),
+                        color: FlutterFlowTheme.of(context).secondaryText,
                       ),
-                  hintText: FFLocalizations.of(context).getText(
-                    '4v5ci7di' /* Ingrese su correo electronico.... */,
-                  ),
-                  hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF95A1AC),
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 0.0,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 0.0,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 0.0,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 0.0,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 20.0, 24.0),
+                  maxLines: null,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: _model.emailAddressControllerValidator
+                      .asValidator(context),
                 ),
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                    ),
-                maxLines: null,
-                validator:
-                    _model.emailAddressControllerValidator.asValidator(context),
               ),
             ),
             Padding(
@@ -230,8 +245,8 @@ class _OlvidoContraseaWidgetState extends State<OlvidoContraseaWidget> {
                   'dg8a2wch' /* Enviar enlace */,
                 ),
                 options: FFButtonOptions(
-                  width: 270.0,
-                  height: 50.0,
+                  width: 200.0,
+                  height: 40.0,
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),

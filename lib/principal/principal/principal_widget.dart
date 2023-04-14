@@ -161,57 +161,54 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 5.0,
-                              shape: RoundedRectangleBorder(
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Container(
+                              width: 300.0,
+                              height: 45.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              child: Container(
-                                width: double.infinity,
-                                height: 45.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(15.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('ingresarPedido');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'e17iplr3' /* Ingresar pedido */,
                                 ),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('ingresarPedido');
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'e17iplr3' /* Ingresar pedido */,
+                                icon: Icon(
+                                  Icons.event_note_rounded,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 60.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  icon: Icon(
-                                    Icons.event_note_rounded,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
                                 ),
                               ),
                             ),
@@ -226,57 +223,54 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 5.0,
-                              shape: RoundedRectangleBorder(
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Container(
+                              width: 300.0,
+                              height: 45.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              child: Container(
-                                width: double.infinity,
-                                height: 45.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(15.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Productos');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'xynh6z3a' /* Productos */,
                                 ),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('Productos');
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'xynh6z3a' /* Productos */,
+                                icon: Icon(
+                                  Icons.store_rounded,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 60.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  icon: Icon(
-                                    Icons.store_rounded,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
                                 ),
                               ),
                             ),
@@ -291,57 +285,54 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 5.0,
-                              shape: RoundedRectangleBorder(
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Container(
+                              width: 300.0,
+                              height: 45.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              child: Container(
-                                width: double.infinity,
-                                height: 45.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(15.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Carrito');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'q4tnljpu' /* Pedidos */,
                                 ),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('Carrito');
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'q4tnljpu' /* Pedidos */,
+                                icon: Icon(
+                                  Icons.local_dining_outlined,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 60.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  icon: Icon(
-                                    Icons.local_dining_outlined,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
                                 ),
                               ),
                             ),
@@ -356,57 +347,54 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 5.0,
-                              shape: RoundedRectangleBorder(
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 5.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Container(
+                              width: 300.0,
+                              height: 45.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              child: Container(
-                                width: double.infinity,
-                                height: 45.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(15.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Orden');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'fzzvft5q' /* Orden */,
                                 ),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    context.pushNamed('Orden');
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'fzzvft5q' /* Orden */,
+                                icon: Icon(
+                                  Icons.money,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: double.infinity,
+                                  height: 60.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  icon: Icon(
-                                    Icons.money,
-                                    size: 15.0,
-                                  ),
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    elevation: 5.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15.0),
-                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
                                 ),
                               ),
                             ),
@@ -418,8 +406,8 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 40.0, 0.0),
                       child: Container(
-                        width: 400.0,
-                        height: 100.0,
+                        width: 300.0,
+                        height: 110.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -438,8 +426,11 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      '403b1d7o' /* ¿Por favor podrías valorar nue... */,
+                                      '403b1d7o' /* ¿Por favor podrías
+ valorar nu... */
+                                      ,
                                     ),
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -552,45 +543,44 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 60.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Container(
-                            width: double.infinity,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                        Container(
+                          width: 300.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('Inicio');
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'dxlnb6ed' /* Cerrar sesión */,
                             ),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('Inicio');
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'dxlnb6ed' /* Cerrar sesión */,
+                            options: FFButtonOptions(
+                              width: 130.0,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              elevation: 5.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
                               ),
-                              options: FFButtonOptions(
-                                width: 130.0,
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).tertiary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                                elevation: 5.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
+                              borderRadius: BorderRadius.circular(15.0),
                             ),
                           ),
                         ),

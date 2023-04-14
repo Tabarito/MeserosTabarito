@@ -124,195 +124,204 @@ class _CarritoWidgetState extends State<CarritoWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                child: Column(
+                child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 5.0, 0.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  'assets/images/Logo_en_gris_Tipo_Lavishly.png',
-                                  width: 160.0,
-                                  height: 105.0,
-                                  fit: BoxFit.scaleDown,
-                                ).animateOnPageLoad(
-                                    animationsMap['imageOnPageLoadAnimation']!),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(40.0, 20.0, 40.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'qz27vj6o' /* Valor: */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  fontSize: 18.0,
-                                ),
-                          ),
-                          StreamBuilder<List<SubProductosRecord>>(
-                            stream: querySubProductosRecord(),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: SpinKitCubeGrid(
-                                      color:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      size: 50.0,
-                                    ),
-                                  ),
-                                );
-                              }
-                              List<SubProductosRecord>
-                                  textSubProductosRecordList = snapshot.data!;
-                              return Text(
-                                functions
-                                    .totalEnLista(textSubProductosRecordList
-                                        .map((e) => e.subTotal)
-                                        .withoutNulls
-                                        .toList()
-                                        .where((e) => e == e)
-                                        .toList())
-                                    .toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
                     Expanded(
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 0.0),
-                        child: DefaultTabController(
-                          length: 2,
-                          initialIndex: 0,
-                          child: Column(
-                            children: [
-                              TabBar(
-                                isScrollable: true,
-                                labelColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 20.0,
-                                      letterSpacing: 1.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                indicatorColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                tabs: [
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      '8dxahz3e' /* Productos */,
-                                    ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'oxngyd79' /* Combos */,
+                      child: Container(
+                        width: 420.0,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/Logo_en_gris_Tipo_Lavishly.png',
+                                          width: 160.0,
+                                          height: 105.0,
+                                          fit: BoxFit.scaleDown,
+                                        ).animateOnPageLoad(animationsMap[
+                                            'imageOnPageLoadAnimation']!),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
-                              Expanded(
-                                child: TabBarView(
+                            ),
+                            Container(
+                              width: 400.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 40.0),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            StreamBuilder<
-                                                List<SubProductosRecord>>(
-                                              stream: querySubProductosRecord(),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitCubeGrid(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .tertiary,
-                                                        size: 50.0,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<SubProductosRecord>
-                                                    lVCarritoProductosSubProductosRecordList =
-                                                    snapshot.data!;
-                                                return ListView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  shrinkWrap: true,
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount:
-                                                      lVCarritoProductosSubProductosRecordList
-                                                          .length,
-                                                  itemBuilder: (context,
-                                                      lVCarritoProductosIndex) {
-                                                    final lVCarritoProductosSubProductosRecord =
-                                                        lVCarritoProductosSubProductosRecordList[
-                                                            lVCarritoProductosIndex];
-                                                    return Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  20.0,
-                                                                  20.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: StreamBuilder<
-                                                          ProductoRecord>(
-                                                        stream: ProductoRecord
-                                                            .getDocument(
-                                                                lVCarritoProductosSubProductosRecord
-                                                                    .parentReference),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'qz27vj6o' /* Valor final de la compra: */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            fontSize: 18.0,
+                                          ),
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'vz21hrrl' /* ₡ */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                          ),
+                                    ),
+                                    StreamBuilder<List<SubProductosRecord>>(
+                                      stream: querySubProductosRecord(),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitCubeGrid(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<SubProductosRecord>
+                                            textSubProductosRecordList =
+                                            snapshot.data!;
+                                        return Text(
+                                          functions
+                                              .totalEnLista(
+                                                  textSubProductosRecordList
+                                                      .map((e) => e.subTotal)
+                                                      .withoutNulls
+                                                      .toList()
+                                                      .where((e) => e == e)
+                                                      .toList())
+                                              .toString(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 18.0,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                width: 400.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 0.0, 20.0, 0.0),
+                                  child: DefaultTabController(
+                                    length: 2,
+                                    initialIndex: 0,
+                                    child: Column(
+                                      children: [
+                                        TabBar(
+                                          isScrollable: true,
+                                          labelColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 20.0,
+                                                    letterSpacing: 1.0,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                          indicatorColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .tertiary,
+                                          tabs: [
+                                            Tab(
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '8dxahz3e' /* Productos */,
+                                              ),
+                                            ),
+                                            Tab(
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'oxngyd79' /* Combos */,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: TabBarView(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 40.0),
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      StreamBuilder<
+                                                          List<
+                                                              SubProductosRecord>>(
+                                                        stream:
+                                                            querySubProductosRecord(),
                                                         builder: (context,
                                                             snapshot) {
                                                           // Customize what your widget looks like when it's loading.
@@ -332,477 +341,68 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                                               ),
                                                             );
                                                           }
-                                                          final containerProductoRecord =
+                                                          List<SubProductosRecord>
+                                                              lVCarritoProductosSubProductosRecordList =
                                                               snapshot.data!;
-                                                          return Container(
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          15.0),
-                                                            ),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Container(
-                                                                  width: 100.0,
-                                                                  height: 100.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            15.0),
-                                                                  ),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.only(
-                                                                          bottomLeft:
-                                                                              Radius.circular(15.0),
-                                                                          bottomRight:
-                                                                              Radius.circular(0.0),
-                                                                          topLeft:
-                                                                              Radius.circular(15.0),
-                                                                          topRight:
-                                                                              Radius.circular(0.0),
-                                                                        ),
-                                                                        child: Image
-                                                                            .network(
-                                                                          containerProductoRecord
-                                                                              .imagenProducto!,
-                                                                          width:
-                                                                              100.0,
-                                                                          height:
-                                                                              100.0,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        100.0,
-                                                                    height:
-                                                                        100.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              15.0),
-                                                                    ),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .spaceBetween,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.center,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                                                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      containerProductoRecord.nombreProducto!,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Outfit',
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
-                                                                                    ),
-                                                                                    Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'nwm27sue' /* Precio:  */,
-                                                                                          ),
-                                                                                          textAlign: TextAlign.start,
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Outfit',
-                                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              ),
-                                                                                        ),
-                                                                                        Text(
-                                                                                          formatNumber(
-                                                                                            containerProductoRecord.precioProducto!,
-                                                                                            formatType: FormatType.custom,
-                                                                                            format: '.00',
-                                                                                            locale: '',
-                                                                                          ),
-                                                                                          textAlign: TextAlign.start,
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Outfit',
-                                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                    Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          functions.calcularSubTotal(containerProductoRecord.precioProducto!, lVCarritoProductosSubProductosRecord.cantidad!).toString(),
-                                                                                          textAlign: TextAlign.start,
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Outfit',
-                                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceEvenly,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.end,
-                                                                            children: [
-                                                                              Expanded(
-                                                                                child: InkWell(
-                                                                                  onTap: () async {
-                                                                                    final subProductosUpdateData = {
-                                                                                      ...createSubProductosRecordData(
-                                                                                        subTotal: functions.sumarSubtotal(lVCarritoProductosSubProductosRecord.subTotal!, containerProductoRecord.precioProducto!),
-                                                                                      ),
-                                                                                      'cantidad': FieldValue.increment(1),
-                                                                                    };
-                                                                                    await lVCarritoProductosSubProductosRecord.reference.update(subProductosUpdateData);
-                                                                                  },
-                                                                                  child: Icon(
-                                                                                    Icons.add_circle_outlined,
-                                                                                    color: FlutterFlowTheme.of(context).tertiary,
-                                                                                    size: 24.0,
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.min,
-                                                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                                                children: [
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
-                                                                                    child: Text(
-                                                                                      lVCarritoProductosSubProductosRecord.cantidad!.toString(),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Outfit',
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Expanded(
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: [
-                                                                                    if (lVCarritoProductosSubProductosRecord.cantidad == 0)
-                                                                                      FlutterFlowIconButton(
-                                                                                        borderColor: Colors.transparent,
-                                                                                        borderRadius: 30.0,
-                                                                                        borderWidth: 1.0,
-                                                                                        buttonSize: 35.0,
-                                                                                        icon: Icon(
-                                                                                          Icons.delete_forever,
-                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          size: 20.0,
-                                                                                        ),
-                                                                                        onPressed: () async {
-                                                                                          var confirmDialogResponse = await showDialog<bool>(
-                                                                                                context: context,
-                                                                                                builder: (alertDialogContext) {
-                                                                                                  return AlertDialog(
-                                                                                                    title: Text('Aviso!'),
-                                                                                                    content: Text('Se va a eliminar el producto de la lista del carrito ¿Desea eliminarlo?'),
-                                                                                                    actions: [
-                                                                                                      TextButton(
-                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                        child: Text('Cancelar'),
-                                                                                                      ),
-                                                                                                      TextButton(
-                                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                        child: Text('Confirmar'),
-                                                                                                      ),
-                                                                                                    ],
-                                                                                                  );
-                                                                                                },
-                                                                                              ) ??
-                                                                                              false;
-                                                                                          if (confirmDialogResponse) {
-                                                                                            await lVCarritoProductosSubProductosRecord.reference.delete();
-                                                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                                                              SnackBar(
-                                                                                                content: Text(
-                                                                                                  'Se quito el producto',
-                                                                                                  style: TextStyle(
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  ),
-                                                                                                ),
-                                                                                                duration: Duration(milliseconds: 4000),
-                                                                                                backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                              ),
-                                                                                            );
-                                                                                          } else {
-                                                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                                                              SnackBar(
-                                                                                                content: Text(
-                                                                                                  'No se quito el producto de la lista',
-                                                                                                  style: TextStyle(
-                                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  ),
-                                                                                                ),
-                                                                                                duration: Duration(milliseconds: 4000),
-                                                                                                backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                              ),
-                                                                                            );
-                                                                                          }
-                                                                                        },
-                                                                                      ),
-                                                                                    if (lVCarritoProductosSubProductosRecord.cantidad! > 0)
-                                                                                      InkWell(
-                                                                                        onTap: () async {
-                                                                                          final subProductosUpdateData = {
-                                                                                            ...createSubProductosRecordData(
-                                                                                              subTotal: functions.restarSubtotal(lVCarritoProductosSubProductosRecord.subTotal!, containerProductoRecord.precioProducto!),
-                                                                                            ),
-                                                                                            'cantidad': FieldValue.increment(-1),
-                                                                                          };
-                                                                                          await lVCarritoProductosSubProductosRecord.reference.update(subProductosUpdateData);
-                                                                                        },
-                                                                                        child: Icon(
-                                                                                          Icons.do_disturb_on_sharp,
-                                                                                          color: FlutterFlowTheme.of(context).alternate,
-                                                                                          size: 24.0,
-                                                                                        ),
-                                                                                      ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 20.0, 0.0, 0.0),
-                                            child: StreamBuilder<
-                                                List<ComboRecord>>(
-                                              stream: queryComboRecord(
-                                                queryBuilder: (comboRecord) =>
-                                                    comboRecord
-                                                        .orderBy('nombreCombo'),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitCubeGrid(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .tertiary,
-                                                        size: 50.0,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<ComboRecord>
-                                                    gVCarritoComboComboRecordList =
-                                                    snapshot.data!;
-                                                return GridView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  gridDelegate:
-                                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                                    crossAxisCount: 2,
-                                                    crossAxisSpacing: 10.0,
-                                                    mainAxisSpacing: 10.0,
-                                                    childAspectRatio: 1.0,
-                                                  ),
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount:
-                                                      gVCarritoComboComboRecordList
-                                                          .length,
-                                                  itemBuilder: (context,
-                                                      gVCarritoComboIndex) {
-                                                    final gVCarritoComboComboRecord =
-                                                        gVCarritoComboComboRecordList[
-                                                            gVCarritoComboIndex];
-                                                    return InkWell(
-                                                      onTap: () async {
-                                                        context.pushNamed(
-                                                          'DetalleCombo',
-                                                          queryParams: {
-                                                            'combo':
-                                                                serializeParam(
-                                                              gVCarritoComboComboRecord
-                                                                  .reference,
-                                                              ParamType
-                                                                  .DocumentReference,
-                                                            ),
-                                                          }.withoutNulls,
-                                                        );
-                                                      },
-                                                      child: Container(
-                                                        width: 150.0,
-                                                        height: 300.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                        ),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius
-                                                                              .only(
-                                                                        bottomLeft:
-                                                                            Radius.circular(0.0),
-                                                                        bottomRight:
-                                                                            Radius.circular(0.0),
-                                                                        topLeft:
-                                                                            Radius.circular(12.0),
-                                                                        topRight:
-                                                                            Radius.circular(12.0),
-                                                                      ),
-                                                                      child: Image
-                                                                          .network(
-                                                                        gVCarritoComboComboRecord
-                                                                            .imagenCombo!,
-                                                                        width:
-                                                                            100.0,
-                                                                        height:
-                                                                            500.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceAround,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                          return ListView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                lVCarritoProductosSubProductosRecordList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                lVCarritoProductosIndex) {
+                                                              final lVCarritoProductosSubProductosRecord =
+                                                                  lVCarritoProductosSubProductosRecordList[
+                                                                      lVCarritoProductosIndex];
+                                                              return Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
                                                                             0.0,
+                                                                            20.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Container(
+                                                                child: StreamBuilder<
+                                                                    ProductoRecord>(
+                                                                  stream: ProductoRecord
+                                                                      .getDocument(
+                                                                          lVCarritoProductosSubProductosRecord
+                                                                              .parentReference),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          child:
+                                                                              SpinKitCubeGrid(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).tertiary,
+                                                                            size:
+                                                                                50.0,
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    final containerProductoRecord =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Container(
                                                                       width:
                                                                           100.0,
                                                                       height:
-                                                                          70.0,
+                                                                          100.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -815,154 +415,684 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
+                                                                            MainAxisAlignment.center,
                                                                         children: [
-                                                                          Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceEvenly,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      gVCarritoComboComboRecord.nombreCombo!,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Outfit',
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
+                                                                          Container(
+                                                                            width:
+                                                                                100.0,
+                                                                            height:
+                                                                                100.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              borderRadius: BorderRadius.circular(15.0),
+                                                                            ),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                ClipRRect(
+                                                                                  borderRadius: BorderRadius.only(
+                                                                                    bottomLeft: Radius.circular(15.0),
+                                                                                    bottomRight: Radius.circular(0.0),
+                                                                                    topLeft: Radius.circular(15.0),
+                                                                                    topRight: Radius.circular(0.0),
+                                                                                  ),
+                                                                                  child: Image.network(
+                                                                                    containerProductoRecord.imagenProducto!,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
+                                                                                    fit: BoxFit.cover,
+                                                                                  ),
                                                                                 ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      FFLocalizations.of(context).getText(
-                                                                                        '2croye95' /* Precio: */,
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Outfit',
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: [
-                                                                                    Text(
-                                                                                      gVCarritoComboComboRecord.precioCombo!.toString(),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Outfit',
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
+                                                                              ],
+                                                                            ),
                                                                           ),
-                                                                          Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceEvenly,
-                                                                            children: [
-                                                                              FlutterFlowIconButton(
-                                                                                borderColor: Colors.transparent,
-                                                                                borderRadius: 30.0,
-                                                                                borderWidth: 1.0,
-                                                                                buttonSize: 35.0,
-                                                                                icon: Icon(
-                                                                                  Icons.delete_forever,
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  size: 20.0,
-                                                                                ),
-                                                                                onPressed: () {
-                                                                                  print('IconButton pressed ...');
-                                                                                },
+                                                                          Expanded(
+                                                                            child:
+                                                                                Container(
+                                                                              width: 100.0,
+                                                                              height: 100.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                borderRadius: BorderRadius.circular(15.0),
                                                                               ),
-                                                                            ],
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                      children: [
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                          child: Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                containerProductoRecord.nombreProducto!,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Outfit',
+                                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    ),
+                                                                                              ),
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    FFLocalizations.of(context).getText(
+                                                                                                      'nwm27sue' /* Precio:  */,
+                                                                                                    ),
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  Text(
+                                                                                                    formatNumber(
+                                                                                                      containerProductoRecord.precioProducto!,
+                                                                                                      formatType: FormatType.custom,
+                                                                                                      format: '.00',
+                                                                                                      locale: '',
+                                                                                                    ),
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    functions.calcularSubTotal(containerProductoRecord.precioProducto!, lVCarritoProductosSubProductosRecord.cantidad!).toString(),
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                      children: [
+                                                                                        Expanded(
+                                                                                          child: InkWell(
+                                                                                            onTap: () async {
+                                                                                              final subProductosUpdateData = {
+                                                                                                ...createSubProductosRecordData(
+                                                                                                  subTotal: functions.sumarSubtotal(lVCarritoProductosSubProductosRecord.subTotal!, containerProductoRecord.precioProducto!),
+                                                                                                ),
+                                                                                                'cantidad': FieldValue.increment(1),
+                                                                                              };
+                                                                                              await lVCarritoProductosSubProductosRecord.reference.update(subProductosUpdateData);
+                                                                                            },
+                                                                                            child: Icon(
+                                                                                              Icons.add_circle_outlined,
+                                                                                              color: FlutterFlowTheme.of(context).tertiary,
+                                                                                              size: 24.0,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                        Row(
+                                                                                          mainAxisSize: MainAxisSize.min,
+                                                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                              child: Text(
+                                                                                                lVCarritoProductosSubProductosRecord.cantidad!.toString(),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Outfit',
+                                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                        Expanded(
+                                                                                          child: Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              if (lVCarritoProductosSubProductosRecord.cantidad == 0)
+                                                                                                FlutterFlowIconButton(
+                                                                                                  borderColor: Colors.transparent,
+                                                                                                  borderRadius: 30.0,
+                                                                                                  borderWidth: 1.0,
+                                                                                                  buttonSize: 35.0,
+                                                                                                  icon: Icon(
+                                                                                                    Icons.delete_forever,
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    size: 20.0,
+                                                                                                  ),
+                                                                                                  onPressed: () async {
+                                                                                                    var confirmDialogResponse = await showDialog<bool>(
+                                                                                                          context: context,
+                                                                                                          builder: (alertDialogContext) {
+                                                                                                            return AlertDialog(
+                                                                                                              title: Text('Aviso!'),
+                                                                                                              content: Text('Se va a eliminar el producto de la lista del carrito ¿Desea eliminarlo?'),
+                                                                                                              actions: [
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                  child: Text('Cancelar'),
+                                                                                                                ),
+                                                                                                                TextButton(
+                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                  child: Text('Confirmar'),
+                                                                                                                ),
+                                                                                                              ],
+                                                                                                            );
+                                                                                                          },
+                                                                                                        ) ??
+                                                                                                        false;
+                                                                                                    if (confirmDialogResponse) {
+                                                                                                      await lVCarritoProductosSubProductosRecord.reference.delete();
+                                                                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                        SnackBar(
+                                                                                                          content: Text(
+                                                                                                            'Se quito el producto',
+                                                                                                            style: TextStyle(
+                                                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                          duration: Duration(milliseconds: 4000),
+                                                                                                          backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    } else {
+                                                                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                        SnackBar(
+                                                                                                          content: Text(
+                                                                                                            'No se quito el producto de la lista',
+                                                                                                            style: TextStyle(
+                                                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                          duration: Duration(milliseconds: 4000),
+                                                                                                          backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                  },
+                                                                                                ),
+                                                                                              if (lVCarritoProductosSubProductosRecord.cantidad! > 0)
+                                                                                                InkWell(
+                                                                                                  onTap: () async {
+                                                                                                    final subProductosUpdateData = {
+                                                                                                      ...createSubProductosRecordData(
+                                                                                                        subTotal: functions.restarSubtotal(lVCarritoProductosSubProductosRecord.subTotal!, containerProductoRecord.precioProducto!),
+                                                                                                      ),
+                                                                                                      'cantidad': FieldValue.increment(-1),
+                                                                                                    };
+                                                                                                    await lVCarritoProductosSubProductosRecord.reference.update(subProductosUpdateData);
+                                                                                                  },
+                                                                                                  child: Icon(
+                                                                                                    Icons.do_disturb_on_sharp,
+                                                                                                    color: FlutterFlowTheme.of(context).alternate,
+                                                                                                    size: 24.0,
+                                                                                                  ),
+                                                                                                ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                    ),
-                                                                  ),
+                                                                    );
+                                                                  },
                                                                 ),
-                                                              ],
-                                                            ),
-                                                          ],
-                                                        ),
+                                                              );
+                                                            },
+                                                          );
+                                                        },
                                                       ),
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  20.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: StreamBuilder<
+                                                          List<
+                                                              SubCombosRecord>>(
+                                                        stream:
+                                                            querySubCombosRecord(),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    SpinKitCubeGrid(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .tertiary,
+                                                                  size: 50.0,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          List<SubCombosRecord>
+                                                              gVCarritoComboSubCombosRecordList =
+                                                              snapshot.data!;
+                                                          return GridView
+                                                              .builder(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            gridDelegate:
+                                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                              crossAxisCount: 2,
+                                                              crossAxisSpacing:
+                                                                  10.0,
+                                                              mainAxisSpacing:
+                                                                  10.0,
+                                                              childAspectRatio:
+                                                                  1.0,
+                                                            ),
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount:
+                                                                gVCarritoComboSubCombosRecordList
+                                                                    .length,
+                                                            itemBuilder: (context,
+                                                                gVCarritoComboIndex) {
+                                                              final gVCarritoComboSubCombosRecord =
+                                                                  gVCarritoComboSubCombosRecordList[
+                                                                      gVCarritoComboIndex];
+                                                              return StreamBuilder<
+                                                                  ComboRecord>(
+                                                                stream: ComboRecord
+                                                                    .getDocument(
+                                                                        gVCarritoComboSubCombosRecord
+                                                                            .parentReference),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitCubeGrid(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).tertiary,
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  final containerComboRecord =
+                                                                      snapshot
+                                                                          .data!;
+                                                                  return Container(
+                                                                    width:
+                                                                        100.0,
+                                                                    height:
+                                                                        150.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              12.0),
+                                                                    ),
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            ClipRRect(
+                                                                              borderRadius: BorderRadius.only(
+                                                                                bottomLeft: Radius.circular(0.0),
+                                                                                bottomRight: Radius.circular(0.0),
+                                                                                topLeft: Radius.circular(12.0),
+                                                                                topRight: Radius.circular(12.0),
+                                                                              ),
+                                                                              child: Image.network(
+                                                                                containerComboRecord.imagenCombo!,
+                                                                                width: 175.0,
+                                                                                height: 100.0,
+                                                                                fit: BoxFit.cover,
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          children: [
+                                                                            Expanded(
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                child: Container(
+                                                                                  width: 100.0,
+                                                                                  height: 70.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                    borderRadius: BorderRadius.circular(15.0),
+                                                                                  ),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                    children: [
+                                                                                      Expanded(
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                          children: [
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    containerComboRecord.nombreCombo!,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    FFLocalizations.of(context).getText(
+                                                                                                      '2croye95' /* ₡ */,
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  Text(
+                                                                                                    containerComboRecord.precioCombo!.toString(),
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    FFLocalizations.of(context).getText(
+                                                                                                      'u7ewcwfn' /* ₡ */,
+                                                                                                    ),
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  Text(
+                                                                                                    gVCarritoComboSubCombosRecord.subTotal!.toString(),
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Outfit',
+                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                          children: [
+                                                                                            Expanded(
+                                                                                              child: Icon(
+                                                                                                Icons.add_circle_outlined,
+                                                                                                color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                size: 24.0,
+                                                                                              ),
+                                                                                            ),
+                                                                                            Row(
+                                                                                              mainAxisSize: MainAxisSize.min,
+                                                                                              mainAxisAlignment: MainAxisAlignment.end,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  gVCarritoComboSubCombosRecord.cantidad!.toString(),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'Outfit',
+                                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                            Expanded(
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  if (gVCarritoComboSubCombosRecord.cantidad == 0)
+                                                                                                    FlutterFlowIconButton(
+                                                                                                      borderColor: Colors.transparent,
+                                                                                                      borderRadius: 30.0,
+                                                                                                      borderWidth: 1.0,
+                                                                                                      buttonSize: 35.0,
+                                                                                                      icon: Icon(
+                                                                                                        Icons.delete_forever,
+                                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        size: 20.0,
+                                                                                                      ),
+                                                                                                      onPressed: () async {
+                                                                                                        var confirmDialogResponse = await showDialog<bool>(
+                                                                                                              context: context,
+                                                                                                              builder: (alertDialogContext) {
+                                                                                                                return AlertDialog(
+                                                                                                                  title: Text('Aviso!'),
+                                                                                                                  content: Text('Se va a eliminar el combo de la lista del carrito ¿Desea eliminarlo?'),
+                                                                                                                  actions: [
+                                                                                                                    TextButton(
+                                                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                      child: Text('Cancelar'),
+                                                                                                                    ),
+                                                                                                                    TextButton(
+                                                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                      child: Text('Confirmar'),
+                                                                                                                    ),
+                                                                                                                  ],
+                                                                                                                );
+                                                                                                              },
+                                                                                                            ) ??
+                                                                                                            false;
+                                                                                                        if (confirmDialogResponse) {
+                                                                                                          await gVCarritoComboSubCombosRecord.reference.delete();
+                                                                                                          ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                            SnackBar(
+                                                                                                              content: Text(
+                                                                                                                'Se quito el producto',
+                                                                                                                style: TextStyle(
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              duration: Duration(milliseconds: 4000),
+                                                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                            ),
+                                                                                                          );
+                                                                                                        } else {
+                                                                                                          ScaffoldMessenger.of(context).showSnackBar(
+                                                                                                            SnackBar(
+                                                                                                              content: Text(
+                                                                                                                'No se quito el producto de la lista',
+                                                                                                                style: TextStyle(
+                                                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              duration: Duration(milliseconds: 4000),
+                                                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                                            ),
+                                                                                                          );
+                                                                                                        }
+                                                                                                      },
+                                                                                                    ),
+                                                                                                  if (gVCarritoComboSubCombosRecord.cantidad! > 0)
+                                                                                                    Icon(
+                                                                                                      Icons.do_disturb_on_sharp,
+                                                                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                                                                      size: 24.0,
+                                                                                                    ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              );
+                                                            },
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 5.0,
+                              child: Container(
+                                width: double.infinity,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () {
+                                        print('Button pressed ...');
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'u7sn4yma' /* OK */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 150.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                            ),
+                                        elevation: 10.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                    ),
                                   ],
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Material(
-                      color: Colors.transparent,
-                      elevation: 5.0,
-                      child: Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'u7sn4yma' /* Button */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 150.0,
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).tertiary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
-                                elevation: 10.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(15.0),
                               ),
                             ),
                           ],

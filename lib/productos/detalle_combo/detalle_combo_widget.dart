@@ -139,6 +139,7 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
             body: SafeArea(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.min,
@@ -163,7 +164,12 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                       ),
                     ],
                   ),
-                  Expanded(
+                  Container(
+                    width: 400.0,
+                    height: 756.5,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                    ),
                     child: StreamBuilder<List<ProductoRecord>>(
                       stream: queryProductoRecord(
                         queryBuilder: (productoRecord) => productoRecord.where(

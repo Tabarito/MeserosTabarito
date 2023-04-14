@@ -17,6 +17,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProductoRecord.serializer)
       ..add(ProvinciaRecord.serializer)
       ..add(RestauranteRecord.serializer)
+      ..add(SubCombosRecord.serializer)
       ..add(SubProductosRecord.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [

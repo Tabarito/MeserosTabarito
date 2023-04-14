@@ -150,100 +150,12 @@ class _InicioWidgetState extends State<InicioWidget>
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        TextFormField(
-                                          controller:
-                                              _model.txtCorreoInicioController,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              'vguhdzrd' /* Correo electrónico */,
-                                            ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF95A1AC),
-                                                      fontSize: 14.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                            ),
-                                            focusedErrorBorder:
-                                                OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 24.0, 20.0, 24.0),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                fontSize: 14.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                          validator: _model
-                                              .txtCorreoInicioControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 25.0, 0.0, 0.0),
+                                        Container(
+                                          width: 350.0,
                                           child: TextFormField(
                                             controller: _model
-                                                .txtContrasenaInicioController,
-                                            obscureText: !_model
-                                                .txtContrasenaInicioVisibility,
+                                                .txtCorreoInicioController,
+                                            obscureText: false,
                                             decoration: InputDecoration(
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
@@ -258,7 +170,7 @@ class _InicioWidgetState extends State<InicioWidget>
                                               hintText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                '3p40xdxd' /* Contraseña */,
+                                                'vguhdzrd' /* Correo electrónico */,
                                               ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -311,25 +223,6 @@ class _InicioWidgetState extends State<InicioWidget>
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
-                                              suffixIcon: InkWell(
-                                                onTap: () => setState(
-                                                  () => _model
-                                                          .txtContrasenaInicioVisibility =
-                                                      !_model
-                                                          .txtContrasenaInicioVisibility,
-                                                ),
-                                                focusNode: FocusNode(
-                                                    skipTraversal: true),
-                                                child: Icon(
-                                                  _model.txtContrasenaInicioVisibility
-                                                      ? Icons
-                                                          .visibility_outlined
-                                                      : Icons
-                                                          .visibility_off_outlined,
-                                                  color: Color(0xFF95A1AC),
-                                                  size: 20.0,
-                                                ),
-                                              ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
@@ -341,9 +234,134 @@ class _InicioWidgetState extends State<InicioWidget>
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
+                                            keyboardType:
+                                                TextInputType.emailAddress,
                                             validator: _model
-                                                .txtContrasenaInicioControllerValidator
+                                                .txtCorreoInicioControllerValidator
                                                 .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 25.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 350.0,
+                                            child: TextFormField(
+                                              controller: _model
+                                                  .txtContrasenaInicioController,
+                                              obscureText: !_model
+                                                  .txtContrasenaInicioVisibility,
+                                              decoration: InputDecoration(
+                                                labelStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF95A1AC),
+                                                      fontSize: 14.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '3p40xdxd' /* Contraseña */,
+                                                ),
+                                                hintStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF95A1AC),
+                                                      fontSize: 14.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          15.0),
+                                                ),
+                                                filled: true,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                contentPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(20.0, 24.0,
+                                                            20.0, 24.0),
+                                                suffixIcon: InkWell(
+                                                  onTap: () => setState(
+                                                    () => _model
+                                                            .txtContrasenaInicioVisibility =
+                                                        !_model
+                                                            .txtContrasenaInicioVisibility,
+                                                  ),
+                                                  focusNode: FocusNode(
+                                                      skipTraversal: true),
+                                                  child: Icon(
+                                                    _model.txtContrasenaInicioVisibility
+                                                        ? Icons
+                                                            .visibility_outlined
+                                                        : Icons
+                                                            .visibility_off_outlined,
+                                                    color: Color(0xFF95A1AC),
+                                                    size: 20.0,
+                                                  ),
+                                                ),
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 14.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                              validator: _model
+                                                  .txtContrasenaInicioControllerValidator
+                                                  .asValidator(context),
+                                            ),
                                           ),
                                         ),
                                         Padding(
@@ -448,7 +466,7 @@ class _InicioWidgetState extends State<InicioWidget>
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'c1q9acl8' /* ¿olvido su contraseña? */,
+                                                'c1q9acl8' /* ¿Olvidó su contraseña? */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
