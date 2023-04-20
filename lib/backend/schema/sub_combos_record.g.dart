@@ -35,12 +35,22 @@ class _$SubCombosRecordSerializer
         ..add('cantidad')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    value = object.subTotal;
+    value = object.subTotalCombo;
     if (value != null) {
       result
-        ..add('subTotal')
+        ..add('subTotalCombo')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
+    }
+    value = object.quienCompraCombo;
+    if (value != null) {
+      result
+        ..add('QuienCompraCombo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
     }
     value = object.ffRef;
     if (value != null) {
@@ -75,9 +85,16 @@ class _$SubCombosRecordSerializer
           result.cantidad = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
-        case 'subTotal':
-          result.subTotal = serializers.deserialize(value,
+        case 'subTotalCombo':
+          result.subTotalCombo = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double?;
+          break;
+        case 'QuienCompraCombo':
+          result.quienCompraCombo.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -98,14 +115,21 @@ class _$SubCombosRecord extends SubCombosRecord {
   @override
   final int? cantidad;
   @override
-  final double? subTotal;
+  final double? subTotalCombo;
+  @override
+  final BuiltList<DocumentReference<Object?>>? quienCompraCombo;
   @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$SubCombosRecord([void Function(SubCombosRecordBuilder)? updates]) =>
       (new SubCombosRecordBuilder()..update(updates))._build();
 
-  _$SubCombosRecord._({this.subCombo, this.cantidad, this.subTotal, this.ffRef})
+  _$SubCombosRecord._(
+      {this.subCombo,
+      this.cantidad,
+      this.subTotalCombo,
+      this.quienCompraCombo,
+      this.ffRef})
       : super._();
 
   @override
@@ -122,7 +146,8 @@ class _$SubCombosRecord extends SubCombosRecord {
     return other is SubCombosRecord &&
         subCombo == other.subCombo &&
         cantidad == other.cantidad &&
-        subTotal == other.subTotal &&
+        subTotalCombo == other.subTotalCombo &&
+        quienCompraCombo == other.quienCompraCombo &&
         ffRef == other.ffRef;
   }
 
@@ -131,7 +156,8 @@ class _$SubCombosRecord extends SubCombosRecord {
     var _$hash = 0;
     _$hash = $jc(_$hash, subCombo.hashCode);
     _$hash = $jc(_$hash, cantidad.hashCode);
-    _$hash = $jc(_$hash, subTotal.hashCode);
+    _$hash = $jc(_$hash, subTotalCombo.hashCode);
+    _$hash = $jc(_$hash, quienCompraCombo.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -142,7 +168,8 @@ class _$SubCombosRecord extends SubCombosRecord {
     return (newBuiltValueToStringHelper(r'SubCombosRecord')
           ..add('subCombo', subCombo)
           ..add('cantidad', cantidad)
-          ..add('subTotal', subTotal)
+          ..add('subTotalCombo', subTotalCombo)
+          ..add('quienCompraCombo', quienCompraCombo)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -161,9 +188,18 @@ class SubCombosRecordBuilder
   int? get cantidad => _$this._cantidad;
   set cantidad(int? cantidad) => _$this._cantidad = cantidad;
 
-  double? _subTotal;
-  double? get subTotal => _$this._subTotal;
-  set subTotal(double? subTotal) => _$this._subTotal = subTotal;
+  double? _subTotalCombo;
+  double? get subTotalCombo => _$this._subTotalCombo;
+  set subTotalCombo(double? subTotalCombo) =>
+      _$this._subTotalCombo = subTotalCombo;
+
+  ListBuilder<DocumentReference<Object?>>? _quienCompraCombo;
+  ListBuilder<DocumentReference<Object?>> get quienCompraCombo =>
+      _$this._quienCompraCombo ??=
+          new ListBuilder<DocumentReference<Object?>>();
+  set quienCompraCombo(
+          ListBuilder<DocumentReference<Object?>>? quienCompraCombo) =>
+      _$this._quienCompraCombo = quienCompraCombo;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -178,7 +214,8 @@ class SubCombosRecordBuilder
     if ($v != null) {
       _subCombo = $v.subCombo;
       _cantidad = $v.cantidad;
-      _subTotal = $v.subTotal;
+      _subTotalCombo = $v.subTotalCombo;
+      _quienCompraCombo = $v.quienCompraCombo?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -200,12 +237,26 @@ class SubCombosRecordBuilder
   SubCombosRecord build() => _build();
 
   _$SubCombosRecord _build() {
-    final _$result = _$v ??
-        new _$SubCombosRecord._(
-            subCombo: subCombo,
-            cantidad: cantidad,
-            subTotal: subTotal,
-            ffRef: ffRef);
+    _$SubCombosRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$SubCombosRecord._(
+              subCombo: subCombo,
+              cantidad: cantidad,
+              subTotalCombo: subTotalCombo,
+              quienCompraCombo: _quienCompraCombo?.build(),
+              ffRef: ffRef);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'quienCompraCombo';
+        _quienCompraCombo?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'SubCombosRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

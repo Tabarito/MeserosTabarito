@@ -451,8 +451,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Produtos',
       'ru': 'Продукты',
     },
-    'q4tnljpu': {
-      'es': 'Pedidos',
+    'h1qhmofo': {
+      'es': 'Carrito',
       'en': 'orders',
       'pt': 'ordens',
       'ru': 'заказы',
@@ -683,12 +683,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'ordens',
       'ru': 'заказы',
     },
-    'ogy839we': {
-      'es': 'Orden',
-      'en': 'Order',
-      'pt': 'Ordem',
-      'ru': 'Заказ',
-    },
     'sc6yk46z': {
       'es': 'Shop',
       'en': 'shop',
@@ -725,50 +719,80 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'pedidos de carrinho',
       'ru': 'корзина заказов',
     },
-    'qz27vj6o': {
-      'es': 'Valor final de la compra:',
-      'en': 'Worth:',
-      'pt': 'Valor:',
-      'ru': 'Ценность:',
-    },
-    'vz21hrrl': {
-      'es': '₡',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    '8dxahz3e': {
+    'sdsrwx6f': {
       'es': 'Productos',
       'en': 'Products',
       'pt': 'Produtos',
       'ru': 'Продукты',
     },
-    'nwm27sue': {
-      'es': 'Precio: ',
+    'yrftrui9': {
+      'es': 'Valor final en productos:',
+      'en': 'Worth:',
+      'pt': 'Valor:',
+      'ru': 'Ценность:',
+    },
+    'porj4ag7': {
+      'es': '₡',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'wozl1bpf': {
+      'es': 'Precio/U: ',
       'en': 'Price:',
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
-    'oxngyd79': {
+    'wxsswlha': {
+      'es': 'Sub total ₡ ',
+      'en': 'Price:',
+      'pt': 'Preço:',
+      'ru': 'Цена:',
+    },
+    '7mzfi7ai': {
       'es': 'Combos',
       'en': 'combos',
       'pt': 'combos',
       'ru': 'комбо',
     },
-    '2croye95': {
+    '97uhynq6': {
+      'es': 'Agregar preciona ->  ',
+      'en': 'Worth:',
+      'pt': 'Valor:',
+      'ru': 'Ценность:',
+    },
+    'yotw5xl7': {
       'es': '₡',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'r5uvrzox': {
+      'es': 'Precio/U: ',
       'en': 'Price:',
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
-    'u7ewcwfn': {
-      'es': '₡',
+    't1ns6tr6': {
+      'es': 'Sub total ₡',
       'en': 'Price:',
       'pt': 'Preço:',
       'ru': 'Цена:',
+    },
+    'v8f9ise1': {
+      'es': 'Por favor preciona los montos finales para refrescar',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'yf6v3khm': {
+      'es': 'Precio Total',
+      'en': '',
+      'pt': '',
+      'ru': '',
     },
     'u7sn4yma': {
-      'es': 'OK',
+      'es': 'Pagar',
       'en': 'button',
       'pt': 'botão',
       'ru': 'кнопка',

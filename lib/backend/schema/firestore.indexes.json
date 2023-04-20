@@ -14,5 +14,17 @@
         }
       ]
     }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "SubProductos",
+      "fieldPath": "QuienCompraProducto",
+      "indexes": [
+        {
+          "arrayConfig": "CONTAINS",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
   ]
 }

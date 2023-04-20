@@ -43,6 +43,16 @@ class _$SubProductosRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
+    value = object.quienCompraProducto;
+    if (value != null) {
+      result
+        ..add('QuienCompraProducto')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -80,6 +90,13 @@ class _$SubProductosRecordSerializer
           result.subTotal = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double?;
           break;
+        case 'QuienCompraProducto':
+          result.quienCompraProducto.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -101,6 +118,8 @@ class _$SubProductosRecord extends SubProductosRecord {
   @override
   final double? subTotal;
   @override
+  final BuiltList<DocumentReference<Object?>>? quienCompraProducto;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$SubProductosRecord(
@@ -108,7 +127,11 @@ class _$SubProductosRecord extends SubProductosRecord {
       (new SubProductosRecordBuilder()..update(updates))._build();
 
   _$SubProductosRecord._(
-      {this.subProducto, this.cantidad, this.subTotal, this.ffRef})
+      {this.subProducto,
+      this.cantidad,
+      this.subTotal,
+      this.quienCompraProducto,
+      this.ffRef})
       : super._();
 
   @override
@@ -127,6 +150,7 @@ class _$SubProductosRecord extends SubProductosRecord {
         subProducto == other.subProducto &&
         cantidad == other.cantidad &&
         subTotal == other.subTotal &&
+        quienCompraProducto == other.quienCompraProducto &&
         ffRef == other.ffRef;
   }
 
@@ -136,6 +160,7 @@ class _$SubProductosRecord extends SubProductosRecord {
     _$hash = $jc(_$hash, subProducto.hashCode);
     _$hash = $jc(_$hash, cantidad.hashCode);
     _$hash = $jc(_$hash, subTotal.hashCode);
+    _$hash = $jc(_$hash, quienCompraProducto.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -147,6 +172,7 @@ class _$SubProductosRecord extends SubProductosRecord {
           ..add('subProducto', subProducto)
           ..add('cantidad', cantidad)
           ..add('subTotal', subTotal)
+          ..add('quienCompraProducto', quienCompraProducto)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -169,6 +195,14 @@ class SubProductosRecordBuilder
   double? get subTotal => _$this._subTotal;
   set subTotal(double? subTotal) => _$this._subTotal = subTotal;
 
+  ListBuilder<DocumentReference<Object?>>? _quienCompraProducto;
+  ListBuilder<DocumentReference<Object?>> get quienCompraProducto =>
+      _$this._quienCompraProducto ??=
+          new ListBuilder<DocumentReference<Object?>>();
+  set quienCompraProducto(
+          ListBuilder<DocumentReference<Object?>>? quienCompraProducto) =>
+      _$this._quienCompraProducto = quienCompraProducto;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -183,6 +217,7 @@ class SubProductosRecordBuilder
       _subProducto = $v.subProducto;
       _cantidad = $v.cantidad;
       _subTotal = $v.subTotal;
+      _quienCompraProducto = $v.quienCompraProducto?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -204,12 +239,26 @@ class SubProductosRecordBuilder
   SubProductosRecord build() => _build();
 
   _$SubProductosRecord _build() {
-    final _$result = _$v ??
-        new _$SubProductosRecord._(
-            subProducto: subProducto,
-            cantidad: cantidad,
-            subTotal: subTotal,
-            ffRef: ffRef);
+    _$SubProductosRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$SubProductosRecord._(
+              subProducto: subProducto,
+              cantidad: cantidad,
+              subTotal: subTotal,
+              quienCompraProducto: _quienCompraProducto?.build(),
+              ffRef: ffRef);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'quienCompraProducto';
+        _quienCompraProducto?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'SubProductosRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

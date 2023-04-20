@@ -20,13 +20,13 @@ class ProductosModel extends FlutterFlowModel {
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
   SubProductosRecord? subProductosComida;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
-  SubProductosRecord? subProductosBebidas;
+  SubProductosRecord? subProductosBebida;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
   SubCombosRecord? subCombosCombo;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
   SubProductosRecord? subProductosFavoritos;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
-  SubCombosRecord? subCombosComboFavorito;
+  SubCombosRecord? subCombosFavorito;
 
   /// Initialization and disposal methods.
 

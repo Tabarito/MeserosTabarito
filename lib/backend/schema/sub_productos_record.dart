@@ -17,6 +17,9 @@ abstract class SubProductosRecord
 
   double? get subTotal;
 
+  @BuiltValueField(wireName: 'QuienCompraProducto')
+  BuiltList<DocumentReference>? get quienCompraProducto;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -25,7 +28,8 @@ abstract class SubProductosRecord
 
   static void _initializeBuilder(SubProductosRecordBuilder builder) => builder
     ..cantidad = 0
-    ..subTotal = 0.0;
+    ..subTotal = 0.0
+    ..quienCompraProducto = ListBuilder();
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -65,7 +69,8 @@ Map<String, dynamic> createSubProductosRecordData({
       (s) => s
         ..subProducto = subProducto
         ..cantidad = cantidad
-        ..subTotal = subTotal,
+        ..subTotal = subTotal
+        ..quienCompraProducto = null,
     ),
   );
 

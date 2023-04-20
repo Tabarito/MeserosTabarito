@@ -67,6 +67,8 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<ComboRecord>(
       stream: ComboRecord.getDocument(widget.combo!),
       builder: (context, snapshot) {

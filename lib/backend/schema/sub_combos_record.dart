@@ -15,7 +15,10 @@ abstract class SubCombosRecord
 
   int? get cantidad;
 
-  double? get subTotal;
+  double? get subTotalCombo;
+
+  @BuiltValueField(wireName: 'QuienCompraCombo')
+  BuiltList<DocumentReference>? get quienCompraCombo;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -25,7 +28,8 @@ abstract class SubCombosRecord
 
   static void _initializeBuilder(SubCombosRecordBuilder builder) => builder
     ..cantidad = 0
-    ..subTotal = 0.0;
+    ..subTotalCombo = 0.0
+    ..quienCompraCombo = ListBuilder();
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -56,7 +60,7 @@ abstract class SubCombosRecord
 Map<String, dynamic> createSubCombosRecordData({
   DocumentReference? subCombo,
   int? cantidad,
-  double? subTotal,
+  double? subTotalCombo,
 }) {
   final firestoreData = serializers.toFirestore(
     SubCombosRecord.serializer,
@@ -64,7 +68,8 @@ Map<String, dynamic> createSubCombosRecordData({
       (s) => s
         ..subCombo = subCombo
         ..cantidad = cantidad
-        ..subTotal = subTotal,
+        ..subTotalCombo = subTotalCombo
+        ..quienCompraCombo = null,
     ),
   );
 

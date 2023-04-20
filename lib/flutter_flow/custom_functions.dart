@@ -16,7 +16,7 @@ String calcularPorcentaje(String cantEstrellas) {
   return total.toString() + "%";
 }
 
-double sumarSubtotal(
+double subSumarSubtotal(
   double valorSubtotal,
   double precio,
 ) {
@@ -24,7 +24,7 @@ double sumarSubtotal(
   return valorSubtotal;
 }
 
-double restarSubtotal(
+double subRestarSubtotal(
   double valorSubtotal,
   double precio,
 ) {
@@ -34,7 +34,7 @@ double restarSubtotal(
   return valorSubtotal;
 }
 
-double totalEnLista(List<double> subTotal) {
+double totalEnListaProductos(List<double> subTotal) {
   double total = 0;
   for (double add in subTotal) {
     total += add;
@@ -47,4 +47,28 @@ double calcularSubTotal(
   int cantidad,
 ) {
   return precio * cantidad;
+}
+
+double totalEnListaCombo(List<double> subTotal) {
+  double total = 0;
+  for (double add in subTotal) {
+    total += add;
+  }
+  return total;
+}
+
+double totalEnListaProductosSumarPrecioTotal(List<double> subTotal) {
+  double total = 0;
+  for (double add in subTotal) {
+    total += add;
+  }
+  return total;
+}
+
+double mostrarPrecioFinal(
+  double totalCompraProductos,
+  double totalCompraCombos,
+) {
+  double total = totalCompraProductos + totalCompraCombos;
+  return total;
 }

@@ -64,6 +64,8 @@ class _ProductosWidgetState extends State<ProductosWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
@@ -160,7 +162,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                     ),
                     Container(
                       width: 400.0,
-                      height: 616.7,
+                      height: 500.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -180,7 +182,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      fontSize: 20.0,
+                                      fontSize: 16.0,
                                       letterSpacing: 1.0,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -219,7 +221,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                   children: [
                                     SingleChildScrollView(
                                       child: Column(
-                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -515,11 +517,16 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                           onPressed:
                                                                               () async {
                                                                             final subProductosCreateData =
-                                                                                createSubProductosRecordData(
-                                                                              subProducto: lVComidaProductoRecord.reference,
-                                                                              cantidad: 1,
-                                                                              subTotal: lVComidaProductoRecord.precioProducto,
-                                                                            );
+                                                                                {
+                                                                              ...createSubProductosRecordData(
+                                                                                subProducto: lVComidaProductoRecord.reference,
+                                                                                cantidad: 1,
+                                                                                subTotal: lVComidaProductoRecord.precioProducto,
+                                                                              ),
+                                                                              'QuienCompraProducto': [
+                                                                                currentUserReference
+                                                                              ],
+                                                                            };
                                                                             var subProductosRecordReference =
                                                                                 SubProductosRecord.createDoc(lVComidaProductoRecord.reference);
                                                                             await subProductosRecordReference.set(subProductosCreateData);
@@ -534,7 +541,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                   ),
                                                                                 ),
                                                                                 duration: Duration(milliseconds: 4000),
-                                                                                backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                backgroundColor: FlutterFlowTheme.of(context).info,
                                                                               ),
                                                                             );
 
@@ -838,14 +845,19 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
-                                                                              final subProductosCreateData = createSubProductosRecordData(
-                                                                                subProducto: lVBebidaProductoRecord.reference,
-                                                                                cantidad: 1,
-                                                                                subTotal: lVBebidaProductoRecord.precioProducto,
-                                                                              );
+                                                                              final subProductosCreateData = {
+                                                                                ...createSubProductosRecordData(
+                                                                                  subProducto: lVBebidaProductoRecord.reference,
+                                                                                  cantidad: 1,
+                                                                                  subTotal: lVBebidaProductoRecord.precioProducto,
+                                                                                ),
+                                                                                'QuienCompraProducto': [
+                                                                                  currentUserReference
+                                                                                ],
+                                                                              };
                                                                               var subProductosRecordReference = SubProductosRecord.createDoc(lVBebidaProductoRecord.reference);
                                                                               await subProductosRecordReference.set(subProductosCreateData);
-                                                                              _model.subProductosBebidas = SubProductosRecord.getDocumentFromData(subProductosCreateData, subProductosRecordReference);
+                                                                              _model.subProductosBebida = SubProductosRecord.getDocumentFromData(subProductosCreateData, subProductosRecordReference);
                                                                               ScaffoldMessenger.of(context).showSnackBar(
                                                                                 SnackBar(
                                                                                   content: Text(
@@ -855,7 +867,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                     ),
                                                                                   ),
                                                                                   duration: Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                  backgroundColor: FlutterFlowTheme.of(context).info,
                                                                                 ),
                                                                               );
 
@@ -1146,11 +1158,16 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                       size: 20.0,
                                                                                     ),
                                                                                     onPressed: () async {
-                                                                                      final subCombosCreateData = createSubCombosRecordData(
-                                                                                        subCombo: gridViewComboRecord.reference,
-                                                                                        cantidad: 1,
-                                                                                        subTotal: gridViewComboRecord.precioCombo,
-                                                                                      );
+                                                                                      final subCombosCreateData = {
+                                                                                        ...createSubCombosRecordData(
+                                                                                          subCombo: gridViewComboRecord.reference,
+                                                                                          cantidad: 1,
+                                                                                          subTotalCombo: gridViewComboRecord.precioCombo,
+                                                                                        ),
+                                                                                        'QuienCompraCombo': [
+                                                                                          currentUserReference
+                                                                                        ],
+                                                                                      };
                                                                                       var subCombosRecordReference = SubCombosRecord.createDoc(gridViewComboRecord.reference);
                                                                                       await subCombosRecordReference.set(subCombosCreateData);
                                                                                       _model.subCombosCombo = SubCombosRecord.getDocumentFromData(subCombosCreateData, subCombosRecordReference);
@@ -1163,7 +1180,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                             ),
                                                                                           ),
                                                                                           duration: Duration(milliseconds: 4000),
-                                                                                          backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                          backgroundColor: FlutterFlowTheme.of(context).info,
                                                                                         ),
                                                                                       );
 
@@ -1440,11 +1457,16 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                 size: 20.0,
                                                                               ),
                                                                               onPressed: () async {
-                                                                                final subProductosCreateData = createSubProductosRecordData(
-                                                                                  subProducto: lVFavoritosProductoRecord.reference,
-                                                                                  cantidad: 1,
-                                                                                  subTotal: lVFavoritosProductoRecord.precioProducto,
-                                                                                );
+                                                                                final subProductosCreateData = {
+                                                                                  ...createSubProductosRecordData(
+                                                                                    subProducto: lVFavoritosProductoRecord.reference,
+                                                                                    cantidad: 1,
+                                                                                    subTotal: lVFavoritosProductoRecord.precioProducto,
+                                                                                  ),
+                                                                                  'QuienCompraProducto': [
+                                                                                    currentUserReference
+                                                                                  ],
+                                                                                };
                                                                                 var subProductosRecordReference = SubProductosRecord.createDoc(lVFavoritosProductoRecord.reference);
                                                                                 await subProductosRecordReference.set(subProductosCreateData);
                                                                                 _model.subProductosFavoritos = SubProductosRecord.getDocumentFromData(subProductosCreateData, subProductosRecordReference);
@@ -1457,7 +1479,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                                       ),
                                                                                     ),
                                                                                     duration: Duration(milliseconds: 4000),
-                                                                                    backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                    backgroundColor: FlutterFlowTheme.of(context).info,
                                                                                   ),
                                                                                 );
 
@@ -1718,40 +1740,47 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                               children: [
-                                                                                FlutterFlowIconButton(
-                                                                                  borderColor: Colors.transparent,
-                                                                                  borderRadius: 30.0,
-                                                                                  borderWidth: 1.0,
-                                                                                  buttonSize: 35.0,
-                                                                                  icon: Icon(
-                                                                                    Icons.add_shopping_cart,
-                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    size: 20.0,
-                                                                                  ),
-                                                                                  onPressed: () async {
-                                                                                    final subCombosCreateData = createSubCombosRecordData(
-                                                                                      subCombo: gridViewComboRecord.reference,
-                                                                                      cantidad: 1,
-                                                                                      subTotal: gridViewComboRecord.precioCombo,
-                                                                                    );
-                                                                                    var subCombosRecordReference = SubCombosRecord.createDoc(gridViewComboRecord.reference);
-                                                                                    await subCombosRecordReference.set(subCombosCreateData);
-                                                                                    _model.subCombosComboFavorito = SubCombosRecord.getDocumentFromData(subCombosCreateData, subCombosRecordReference);
-                                                                                    ScaffoldMessenger.of(context).showSnackBar(
-                                                                                      SnackBar(
-                                                                                        content: Text(
-                                                                                          'Producto Agregado',
-                                                                                          style: TextStyle(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                          ),
+                                                                                Expanded(
+                                                                                  child: FlutterFlowIconButton(
+                                                                                    borderColor: Colors.transparent,
+                                                                                    borderRadius: 30.0,
+                                                                                    borderWidth: 1.0,
+                                                                                    buttonSize: 35.0,
+                                                                                    icon: Icon(
+                                                                                      Icons.add_shopping_cart,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                      size: 20.0,
+                                                                                    ),
+                                                                                    onPressed: () async {
+                                                                                      final subCombosCreateData = {
+                                                                                        ...createSubCombosRecordData(
+                                                                                          subCombo: gridViewComboRecord.reference,
+                                                                                          cantidad: 1,
+                                                                                          subTotalCombo: gridViewComboRecord.precioCombo,
                                                                                         ),
-                                                                                        duration: Duration(milliseconds: 4000),
-                                                                                        backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                      ),
-                                                                                    );
+                                                                                        'QuienCompraCombo': [
+                                                                                          currentUserReference
+                                                                                        ],
+                                                                                      };
+                                                                                      var subCombosRecordReference = SubCombosRecord.createDoc(gridViewComboRecord.reference);
+                                                                                      await subCombosRecordReference.set(subCombosCreateData);
+                                                                                      _model.subCombosFavorito = SubCombosRecord.getDocumentFromData(subCombosCreateData, subCombosRecordReference);
+                                                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                                                        SnackBar(
+                                                                                          content: Text(
+                                                                                            'Producto Agregado',
+                                                                                            style: TextStyle(
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                            ),
+                                                                                          ),
+                                                                                          duration: Duration(milliseconds: 4000),
+                                                                                          backgroundColor: FlutterFlowTheme.of(context).info,
+                                                                                        ),
+                                                                                      );
 
-                                                                                    setState(() {});
-                                                                                  },
+                                                                                      setState(() {});
+                                                                                    },
+                                                                                  ),
                                                                                 ),
                                                                               ],
                                                                             ),
@@ -1804,97 +1833,47 @@ class _ProductosWidgetState extends State<ProductosWidget>
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 20.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        context.pushNamed('Carrito');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        '7khs92vb' /* Carrito */,
-                                      ),
-                                      icon: Icon(
-                                        Icons.shopping_cart,
-                                        size: 15.0,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .tertiary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                            ),
-                                        elevation: 10.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
-                                      ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      context.pushNamed('Carrito');
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      '7khs92vb' /* Carrito */,
                                     ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'ogy839we' /* Orden */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 130.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .tertiary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                            ),
-                                        elevation: 10.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
-                                      ),
+                                    icon: Icon(
+                                      Icons.shopping_cart,
+                                      size: 15.0,
                                     ),
-                                  ],
-                                ),
+                                    options: FFButtonOptions(
+                                      width: 130.0,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                          ),
+                                      elevation: 10.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15.0),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
