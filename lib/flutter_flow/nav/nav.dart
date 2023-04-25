@@ -136,9 +136,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => OrdenWidget(),
             ),
             FFRoute(
-              name: 'Demostraciones',
-              path: 'demostraciones',
-              builder: (context, params) => DemostracionesWidget(),
+              name: 'OtrasDemostraciones',
+              path: 'otrasDemostraciones',
+              builder: (context, params) => OtrasDemostracionesWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

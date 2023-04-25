@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/comp_ingresar_datos_widget.dart';
+import '/components/comp_pagar_orden_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -91,19 +91,25 @@ class _CarritoWidgetState extends State<CarritoWidget>
               size: 20.0,
             ),
           ),
-          title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-            child: Text(
-              FFLocalizations.of(context).getText(
-                '1bgick2o' /* Pedidos en carrito */,
-              ),
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Outfit',
-                    color: FlutterFlowTheme.of(context).secondary,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w600,
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                child: Text(
+                  FFLocalizations.of(context).getText(
+                    '1bgick2o' /* Pedidos en carrito */,
                   ),
-            ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        color: FlutterFlowTheme.of(context).secondary,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ),
+            ],
           ),
           actions: [
             Padding(
@@ -1407,9 +1413,7 @@ class _CarritoWidgetState extends State<CarritoWidget>
                               ),
                             ),
                             StreamBuilder<List<SubCombosRecord>>(
-                              stream: querySubCombosRecord(
-                                singleRecord: true,
-                              ),
+                              stream: querySubCombosRecord(),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
@@ -1428,10 +1432,6 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                 List<SubCombosRecord>
                                     containerSubCombosRecordList =
                                     snapshot.data!;
-                                final containerSubCombosRecord =
-                                    containerSubCombosRecordList.isNotEmpty
-                                        ? containerSubCombosRecordList.first
-                                        : null;
                                 return Material(
                                   color: Colors.transparent,
                                   elevation: 5.0,
@@ -1447,156 +1447,142 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        Container(
-                                          width: 380.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 2.0, 0.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
-                                                  children: [
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'v8f9ise1' /* Por favor preciona los montos ... */,
-                                                      ),
-                                                      maxLines: 2,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                              ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 3.0, 0.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
-                                                  children: [
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'yf6v3khm' /* Precio Total */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                              ),
-                                                    ),
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        functions
-                                                            .mPFinal(
-                                                                FFAppState()
-                                                                    .montoFinalProductos,
-                                                                FFAppState()
-                                                                    .montoFinalCombos)
-                                                            .toString(),
-                                                        '0.00',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                              ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: StreamBuilder<
-                                                    List<SubProductosRecord>>(
-                                                  stream:
-                                                      querySubProductosRecord(
-                                                    singleRecord: true,
+                                        StreamBuilder<List<SubProductosRecord>>(
+                                          stream: querySubProductosRecord(),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child: SpinKitCubeGrid(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .tertiary,
+                                                    size: 50.0,
                                                   ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              SpinKitCubeGrid(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .tertiary,
-                                                            size: 50.0,
+                                                ),
+                                              );
+                                            }
+                                            List<SubProductosRecord>
+                                                containerSubProductosRecordList =
+                                                snapshot.data!;
+                                            return Container(
+                                              width: 380.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 2.0,
+                                                                0.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'v8f9ise1' /* Por favor preciona los montos ... */,
                                                           ),
+                                                          maxLines: 2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                              ),
                                                         ),
-                                                      );
-                                                    }
-                                                    List<SubProductosRecord>
-                                                        buttonSubProductosRecordList =
-                                                        snapshot.data!;
-                                                    // Return an empty Container when the item does not exist.
-                                                    if (snapshot
-                                                        .data!.isEmpty) {
-                                                      return Container();
-                                                    }
-                                                    final buttonSubProductosRecord =
-                                                        buttonSubProductosRecordList
-                                                                .isNotEmpty
-                                                            ? buttonSubProductosRecordList
-                                                                .first
-                                                            : null;
-                                                    return FFButtonWidget(
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 3.0,
+                                                                0.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: [
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'yf6v3khm' /* Precio Total */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 16.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                        ),
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            functions
+                                                                .mPFinal(
+                                                                    FFAppState()
+                                                                        .montoFinalProductos,
+                                                                    FFAppState()
+                                                                        .montoFinalCombos)
+                                                                .toString(),
+                                                            '0.00',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 16.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
+                                                    child: FFButtonWidget(
                                                       onPressed: () async {
                                                         await showModalBottomSheet(
                                                           isScrollControlled:
@@ -1619,15 +1605,18 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                                                         bottomSheetContext)
                                                                     .viewInsets,
                                                                 child:
-                                                                    CompIngresarDatosWidget(
-                                                                  preciofinal: functions.mPFinal(
+                                                                    CompPagarOrdenWidget(
+                                                                  montofinal: functions.mPFinal(
                                                                       FFAppState()
                                                                           .montoFinalProductos,
                                                                       FFAppState()
                                                                           .montoFinalCombos),
-                                                                  listaproductos:
-                                                                      buttonSubProductosRecord!
-                                                                          .reference,
+                                                                  listaProductos:
+                                                                      containerSubProductosRecordList
+                                                                          .toList(),
+                                                                  listaCombos:
+                                                                      containerSubCombosRecordList
+                                                                          .toList(),
                                                                 ),
                                                               ),
                                                             );
@@ -1681,12 +1670,12 @@ class _CarritoWidgetState extends State<CarritoWidget>
                                                             BorderRadius
                                                                 .circular(15.0),
                                                       ),
-                                                    );
-                                                  },
-                                                ),
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                            ],
-                                          ),
+                                            );
+                                          },
                                         ),
                                       ],
                                     ),

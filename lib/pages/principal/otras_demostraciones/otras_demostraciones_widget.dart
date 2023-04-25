@@ -13,19 +13,20 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'demostraciones_model.dart';
-export 'demostraciones_model.dart';
+import 'otras_demostraciones_model.dart';
+export 'otras_demostraciones_model.dart';
 
-class DemostracionesWidget extends StatefulWidget {
-  const DemostracionesWidget({Key? key}) : super(key: key);
+class OtrasDemostracionesWidget extends StatefulWidget {
+  const OtrasDemostracionesWidget({Key? key}) : super(key: key);
 
   @override
-  _DemostracionesWidgetState createState() => _DemostracionesWidgetState();
+  _OtrasDemostracionesWidgetState createState() =>
+      _OtrasDemostracionesWidgetState();
 }
 
-class _DemostracionesWidgetState extends State<DemostracionesWidget>
+class _OtrasDemostracionesWidgetState extends State<OtrasDemostracionesWidget>
     with TickerProviderStateMixin {
-  late DemostracionesModel _model;
+  late OtrasDemostracionesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -49,7 +50,7 @@ class _DemostracionesWidgetState extends State<DemostracionesWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DemostracionesModel());
+    _model = createModel(context, () => OtrasDemostracionesModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -85,7 +86,7 @@ class _DemostracionesWidgetState extends State<DemostracionesWidget>
               size: 20.0,
             ),
             onPressed: () async {
-              context.pushNamed('Principal');
+              context.safePop();
             },
           ),
           title: Text(
@@ -196,106 +197,135 @@ class _DemostracionesWidgetState extends State<DemostracionesWidget>
                 thickness: 1.0,
                 color: FlutterFlowTheme.of(context).accent4,
               ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        '04od50c4' /* Ayudanos a crecer sube una fot... */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context).secondaryText,
+              Expanded(
+                child: Container(
+                  width: 343.4,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: Color(0x00343434),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '04od50c4' /* Ayudanos a crecer sube una fot... */,
                           ),
-                    ),
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    child: Container(
-                      width: 100.0,
-                      height: 100.0,
-                      child: custom_widgets.DisplayImage(
-                        width: 100.0,
-                        height: 100.0,
-                        image: _model.uploadedLocalFile,
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Outfit',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                              ),
+                        ),
                       ),
-                    ),
-                  ),
-                  FFButtonWidget(
-                    onPressed: () async {
-                      final selectedMedia =
-                          await selectMediaWithSourceBottomSheet(
-                        context: context,
-                        maxWidth: 400.00,
-                        maxHeight: 400.00,
-                        imageQuality: 100,
-                        allowPhoto: true,
-                      );
-                      if (selectedMedia != null &&
-                          selectedMedia.every((m) =>
-                              validateFileFormat(m.storagePath, context))) {
-                        setState(() => _model.isDataUploading = true);
-                        var selectedUploadedFiles = <FFUploadedFile>[];
+                      Container(
+                        width: 75.0,
+                        height: 75.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Container(
+                          width: 75.0,
+                          height: 75.0,
+                          child: custom_widgets.DisplayImage(
+                            width: 75.0,
+                            height: 75.0,
+                            image: _model.uploadedLocalFile,
+                          ),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          final selectedMedia =
+                              await selectMediaWithSourceBottomSheet(
+                            context: context,
+                            maxWidth: 400.00,
+                            maxHeight: 400.00,
+                            imageQuality: 100,
+                            allowPhoto: true,
+                            backgroundColor: FlutterFlowTheme.of(context).info,
+                            textColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            pickerFontFamily: 'Montserrat',
+                          );
+                          if (selectedMedia != null &&
+                              selectedMedia.every((m) =>
+                                  validateFileFormat(m.storagePath, context))) {
+                            setState(() => _model.isDataUploading = true);
+                            var selectedUploadedFiles = <FFUploadedFile>[];
 
-                        try {
-                          selectedUploadedFiles = selectedMedia
-                              .map((m) => FFUploadedFile(
-                                    name: m.storagePath.split('/').last,
-                                    bytes: m.bytes,
-                                    height: m.dimensions?.height,
-                                    width: m.dimensions?.width,
-                                    blurHash: m.blurHash,
-                                  ))
-                              .toList();
-                        } finally {
-                          _model.isDataUploading = false;
-                        }
-                        if (selectedUploadedFiles.length ==
-                            selectedMedia.length) {
-                          setState(() {
-                            _model.uploadedLocalFile =
-                                selectedUploadedFiles.first;
-                          });
-                        } else {
-                          setState(() {});
-                          return;
-                        }
-                      }
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      'etdnh9fe' /* Cargar Imagen */,
-                    ),
-                    options: FFButtonOptions(
-                      width: 130.0,
-                      height: 40.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).tertiary,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .override(
-                            fontFamily: 'Outfit',
-                            color: FlutterFlowTheme.of(context).secondaryText,
+                            try {
+                              showUploadMessage(
+                                context,
+                                'Uploading file...',
+                                showLoading: true,
+                              );
+                              selectedUploadedFiles = selectedMedia
+                                  .map((m) => FFUploadedFile(
+                                        name: m.storagePath.split('/').last,
+                                        bytes: m.bytes,
+                                        height: m.dimensions?.height,
+                                        width: m.dimensions?.width,
+                                        blurHash: m.blurHash,
+                                      ))
+                                  .toList();
+                            } finally {
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
+                              _model.isDataUploading = false;
+                            }
+                            if (selectedUploadedFiles.length ==
+                                selectedMedia.length) {
+                              setState(() {
+                                _model.uploadedLocalFile =
+                                    selectedUploadedFiles.first;
+                              });
+                              showUploadMessage(context, 'Success!');
+                            } else {
+                              setState(() {});
+                              showUploadMessage(
+                                  context, 'Failed to upload data');
+                              return;
+                            }
+                          }
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'etdnh9fe' /* Cargar Imagen */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 130.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                              ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
                           ),
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
               Material(
                 color: Colors.transparent,
@@ -325,14 +355,14 @@ class _DemostracionesWidgetState extends State<DemostracionesWidget>
                                 context.pushNamed('Principal');
                               },
                               text: FFLocalizations.of(context).getText(
-                                '4g4at5p2' /* Regresar */,
+                                '4g4at5p2' /* Regresar al menú */,
                               ),
                               icon: Icon(
                                 Icons.keyboard_arrow_left,
                                 size: 15.0,
                               ),
                               options: FFButtonOptions(
-                                width: 130.0,
+                                width: 250.0,
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),

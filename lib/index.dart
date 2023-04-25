@@ -14,5 +14,5 @@ export '/pages/productos/detalle_combo/detalle_combo_widget.dart'
     show DetalleComboWidget;
 export '/pages/pedido/carrito/carrito_widget.dart' show CarritoWidget;
 export '/pages/pedido/orden/orden_widget.dart' show OrdenWidget;
-export '/pages/principal/demostraciones/demostraciones_widget.dart'
-    show DemostracionesWidget;
+export '/pages/principal/otras_demostraciones/otras_demostraciones_widget.dart'
+    show OtrasDemostracionesWidget;

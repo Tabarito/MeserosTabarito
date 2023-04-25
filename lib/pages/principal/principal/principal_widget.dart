@@ -244,7 +244,7 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('Demostraciones');
+                              context.pushNamed('OtrasDemostraciones');
                             },
                             text: FFLocalizations.of(context).getText(
                               'liqgludc' /* Demostración */,

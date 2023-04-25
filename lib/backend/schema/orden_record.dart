@@ -28,6 +28,12 @@ abstract class OrdenRecord implements Built<OrdenRecord, OrdenRecordBuilder> {
 
   DocumentReference? get idMesero;
 
+  BuiltList<DocumentReference>? get listaProductoOrden2;
+
+  String? get mesa2;
+
+  BuiltList<DocumentReference>? get listaComboOrden2;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -37,7 +43,10 @@ abstract class OrdenRecord implements Built<OrdenRecord, OrdenRecordBuilder> {
     ..montoTotal = 0.0
     ..estadoOrden = ''
     ..obsrvOrden = ''
-    ..listaProductoOrden = ListBuilder();
+    ..listaProductoOrden = ListBuilder()
+    ..listaProductoOrden2 = ListBuilder()
+    ..mesa2 = ''
+    ..listaComboOrden2 = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Orden');
@@ -69,6 +78,7 @@ Map<String, dynamic> createOrdenRecordData({
   DocumentReference? idRestaurante,
   String? obsrvOrden,
   DocumentReference? idMesero,
+  String? mesa2,
 }) {
   final firestoreData = serializers.toFirestore(
     OrdenRecord.serializer,
@@ -82,7 +92,10 @@ Map<String, dynamic> createOrdenRecordData({
         ..idRestaurante = idRestaurante
         ..obsrvOrden = obsrvOrden
         ..listaProductoOrden = null
-        ..idMesero = idMesero,
+        ..idMesero = idMesero
+        ..listaProductoOrden2 = null
+        ..mesa2 = mesa2
+        ..listaComboOrden2 = null,
     ),
   );
 

@@ -88,6 +88,33 @@ class _$OrdenRecordSerializer implements StructuredSerializer<OrdenRecord> {
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.listaProductoOrden2;
+    if (value != null) {
+      result
+        ..add('listaProductoOrden2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
+    value = object.mesa2;
+    if (value != null) {
+      result
+        ..add('mesa2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.listaComboOrden2;
+    if (value != null) {
+      result
+        ..add('listaComboOrden2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -155,6 +182,24 @@ class _$OrdenRecordSerializer implements StructuredSerializer<OrdenRecord> {
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
+        case 'listaProductoOrden2':
+          result.listaProductoOrden2.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'mesa2':
+          result.mesa2 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'listaComboOrden2':
+          result.listaComboOrden2.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -188,6 +233,12 @@ class _$OrdenRecord extends OrdenRecord {
   @override
   final DocumentReference<Object?>? idMesero;
   @override
+  final BuiltList<DocumentReference<Object?>>? listaProductoOrden2;
+  @override
+  final String? mesa2;
+  @override
+  final BuiltList<DocumentReference<Object?>>? listaComboOrden2;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$OrdenRecord([void Function(OrdenRecordBuilder)? updates]) =>
@@ -203,6 +254,9 @@ class _$OrdenRecord extends OrdenRecord {
       this.obsrvOrden,
       this.listaProductoOrden,
       this.idMesero,
+      this.listaProductoOrden2,
+      this.mesa2,
+      this.listaComboOrden2,
       this.ffRef})
       : super._();
 
@@ -226,6 +280,9 @@ class _$OrdenRecord extends OrdenRecord {
         obsrvOrden == other.obsrvOrden &&
         listaProductoOrden == other.listaProductoOrden &&
         idMesero == other.idMesero &&
+        listaProductoOrden2 == other.listaProductoOrden2 &&
+        mesa2 == other.mesa2 &&
+        listaComboOrden2 == other.listaComboOrden2 &&
         ffRef == other.ffRef;
   }
 
@@ -241,6 +298,9 @@ class _$OrdenRecord extends OrdenRecord {
     _$hash = $jc(_$hash, obsrvOrden.hashCode);
     _$hash = $jc(_$hash, listaProductoOrden.hashCode);
     _$hash = $jc(_$hash, idMesero.hashCode);
+    _$hash = $jc(_$hash, listaProductoOrden2.hashCode);
+    _$hash = $jc(_$hash, mesa2.hashCode);
+    _$hash = $jc(_$hash, listaComboOrden2.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -258,6 +318,9 @@ class _$OrdenRecord extends OrdenRecord {
           ..add('obsrvOrden', obsrvOrden)
           ..add('listaProductoOrden', listaProductoOrden)
           ..add('idMesero', idMesero)
+          ..add('listaProductoOrden2', listaProductoOrden2)
+          ..add('mesa2', mesa2)
+          ..add('listaComboOrden2', listaComboOrden2)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -308,6 +371,26 @@ class OrdenRecordBuilder implements Builder<OrdenRecord, OrdenRecordBuilder> {
   set idMesero(DocumentReference<Object?>? idMesero) =>
       _$this._idMesero = idMesero;
 
+  ListBuilder<DocumentReference<Object?>>? _listaProductoOrden2;
+  ListBuilder<DocumentReference<Object?>> get listaProductoOrden2 =>
+      _$this._listaProductoOrden2 ??=
+          new ListBuilder<DocumentReference<Object?>>();
+  set listaProductoOrden2(
+          ListBuilder<DocumentReference<Object?>>? listaProductoOrden2) =>
+      _$this._listaProductoOrden2 = listaProductoOrden2;
+
+  String? _mesa2;
+  String? get mesa2 => _$this._mesa2;
+  set mesa2(String? mesa2) => _$this._mesa2 = mesa2;
+
+  ListBuilder<DocumentReference<Object?>>? _listaComboOrden2;
+  ListBuilder<DocumentReference<Object?>> get listaComboOrden2 =>
+      _$this._listaComboOrden2 ??=
+          new ListBuilder<DocumentReference<Object?>>();
+  set listaComboOrden2(
+          ListBuilder<DocumentReference<Object?>>? listaComboOrden2) =>
+      _$this._listaComboOrden2 = listaComboOrden2;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -328,6 +411,9 @@ class OrdenRecordBuilder implements Builder<OrdenRecord, OrdenRecordBuilder> {
       _obsrvOrden = $v.obsrvOrden;
       _listaProductoOrden = $v.listaProductoOrden?.toBuilder();
       _idMesero = $v.idMesero;
+      _listaProductoOrden2 = $v.listaProductoOrden2?.toBuilder();
+      _mesa2 = $v.mesa2;
+      _listaComboOrden2 = $v.listaComboOrden2?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -362,12 +448,21 @@ class OrdenRecordBuilder implements Builder<OrdenRecord, OrdenRecordBuilder> {
               obsrvOrden: obsrvOrden,
               listaProductoOrden: _listaProductoOrden?.build(),
               idMesero: idMesero,
+              listaProductoOrden2: _listaProductoOrden2?.build(),
+              mesa2: mesa2,
+              listaComboOrden2: _listaComboOrden2?.build(),
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'listaProductoOrden';
         _listaProductoOrden?.build();
+
+        _$failedField = 'listaProductoOrden2';
+        _listaProductoOrden2?.build();
+
+        _$failedField = 'listaComboOrden2';
+        _listaComboOrden2?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'OrdenRecord', _$failedField, e.toString());

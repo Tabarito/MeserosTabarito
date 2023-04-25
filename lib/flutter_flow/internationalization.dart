@@ -830,8 +830,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Orden
   {
+    'rbh6dxga': {
+      'es': 'Productos: ',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'a1owclpf': {
+      'es': 'Combos: ',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'ku6b3g3g': {
+      'es': 'Cliente: ',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
     'b4ivltdc': {
-      'es': 'Page Title',
+      'es': 'Ordenes',
       'en': 'Page Title',
       'pt': 'Título da página',
       'ru': 'Заголовок страницы',
@@ -843,7 +861,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'дом',
     },
   },
-  // Demostraciones
+  // OtrasDemostraciones
   {
     '0x1clxqx': {
       'es': 'Demostraciones',
@@ -865,7 +883,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '',
     },
     '4g4at5p2': {
-      'es': 'Regresar',
+      'es': 'Regresar al menú',
       'en': 'orders',
       'pt': 'ordens',
       'ru': 'заказы',
@@ -877,64 +895,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'дом',
     },
   },
-  // CompIngresarDatos
+  // CompPagarOrden
   {
-    'd06pe9bq': {
+    'qumaiu8j': {
       'es': 'Nombre cliente',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'lg3p2awr': {
-      'es': 'Option 1',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    'q8u7sba0': {
+    'xw4bqyle': {
       'es': 'Mesa',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'o7o72qey': {
-      'es': 'Buscar mesa',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    'n7kjmzg9': {
+    '5l9l3w08': {
       'es': 'Observacion',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'z6nqod1b': {
-      'es': 'Option 1',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    '7rqybje6': {
+    'ix6dk8r9': {
       'es': 'Restaurantes',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'm1nbbtgi': {
-      'es': 'Buscar restaurante',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    'lybja07b': {
-      'es': 'Restaurantes',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    '45djugow': {
+    'yg912g4t': {
       'es': 'Completar Orden',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '1xo9oz7h': {
+      'es': 'Regresar',
       'en': '',
       'pt': '',
       'ru': '',
