@@ -17,6 +17,8 @@ import 'schema/canton_record.dart';
 import 'schema/distrito_record.dart';
 import 'schema/sub_productos_record.dart';
 import 'schema/sub_combos_record.dart';
+import 'schema/imagenes_tabarito_record.dart';
+import 'schema/fotos_para_implementar_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -36,6 +38,8 @@ export 'schema/canton_record.dart';
 export 'schema/distrito_record.dart';
 export 'schema/sub_productos_record.dart';
 export 'schema/sub_combos_record.dart';
+export 'schema/imagenes_tabarito_record.dart';
+export 'schema/fotos_para_implementar_record.dart';
 
 /// Functions to query LoginRecords (as a Stream and as a Future).
 Future<int> queryLoginRecordCount({
@@ -668,6 +672,112 @@ Future<FFFirestorePage<SubCombosRecord>> querySubCombosRecordPage({
       pageSize: pageSize,
       isStream: isStream,
     );
+
+/// Functions to query ImagenesTabaritoRecords (as a Stream and as a Future).
+Future<int> queryImagenesTabaritoRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ImagenesTabaritoRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ImagenesTabaritoRecord>> queryImagenesTabaritoRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ImagenesTabaritoRecord.collection,
+      ImagenesTabaritoRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ImagenesTabaritoRecord>> queryImagenesTabaritoRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ImagenesTabaritoRecord.collection,
+      ImagenesTabaritoRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<ImagenesTabaritoRecord>>
+    queryImagenesTabaritoRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+        queryCollectionPage(
+          ImagenesTabaritoRecord.collection,
+          ImagenesTabaritoRecord.serializer,
+          queryBuilder: queryBuilder,
+          nextPageMarker: nextPageMarker,
+          pageSize: pageSize,
+          isStream: isStream,
+        );
+
+/// Functions to query FotosParaImplementarRecords (as a Stream and as a Future).
+Future<int> queryFotosParaImplementarRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      FotosParaImplementarRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<FotosParaImplementarRecord>> queryFotosParaImplementarRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      FotosParaImplementarRecord.collection,
+      FotosParaImplementarRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<FotosParaImplementarRecord>> queryFotosParaImplementarRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      FotosParaImplementarRecord.collection,
+      FotosParaImplementarRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<FotosParaImplementarRecord>>
+    queryFotosParaImplementarRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+        queryCollectionPage(
+          FotosParaImplementarRecord.collection,
+          FotosParaImplementarRecord.serializer,
+          queryBuilder: queryBuilder,
+          nextPageMarker: nextPageMarker,
+          pageSize: pageSize,
+          isStream: isStream,
+        );
 
 Future<int> queryCollectionCount(
   Query collection, {

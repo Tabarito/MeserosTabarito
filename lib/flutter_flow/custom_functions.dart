@@ -11,12 +11,12 @@ import '../backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../auth/firebase_auth/auth_util.dart';
 
-String calcularPorcentaje(String cantEstrellas) {
+String calcPorcent(String cantEstrellas) {
   double total = 100 / 5 * double.parse(cantEstrellas);
   return total.toString() + "%";
 }
 
-double subSumarSubtotal(
+double sSubT(
   double valorSubtotal,
   double precio,
 ) {
@@ -24,7 +24,7 @@ double subSumarSubtotal(
   return valorSubtotal;
 }
 
-double subRestarSubtotal(
+double rSubT(
   double valorSubtotal,
   double precio,
 ) {
@@ -34,7 +34,7 @@ double subRestarSubtotal(
   return valorSubtotal;
 }
 
-double totalEnListaProductos(List<double> subTotal) {
+double tListaP(List<double> subTotal) {
   double total = 0;
   for (double add in subTotal) {
     total += add;
@@ -42,14 +42,14 @@ double totalEnListaProductos(List<double> subTotal) {
   return total;
 }
 
-double calcularSubTotal(
+double calcSubP(
   double precio,
   int cantidad,
 ) {
   return precio * cantidad;
 }
 
-double totalEnListaCombo(List<double> subTotal) {
+double tListaC(List<double> subTotal) {
   double total = 0;
   for (double add in subTotal) {
     total += add;
@@ -57,15 +57,7 @@ double totalEnListaCombo(List<double> subTotal) {
   return total;
 }
 
-double totalEnListaProductosSumarPrecioTotal(List<double> subTotal) {
-  double total = 0;
-  for (double add in subTotal) {
-    total += add;
-  }
-  return total;
-}
-
-double mostrarPrecioFinal(
+double mPFinal(
   double totalCompraProductos,
   double totalCompraCombos,
 ) {

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -168,7 +169,7 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                   ),
                   Container(
                     width: 400.0,
-                    height: 756.5,
+                    height: 545.8,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -421,6 +422,61 @@ class _DetalleComboWidgetState extends State<DetalleComboWidget>
                       height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed('Carrito');
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'rljir9m3' /* Carrito */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.shopping_cart,
+                                    size: 15.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 130.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                        ),
+                                    elevation: 10.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

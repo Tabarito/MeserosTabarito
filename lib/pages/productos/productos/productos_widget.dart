@@ -174,47 +174,50 @@ class _ProductosWidgetState extends State<ProductosWidget>
                           initialIndex: 0,
                           child: Column(
                             children: [
-                              TabBar(
-                                isScrollable: true,
-                                labelColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.0,
-                                      letterSpacing: 1.0,
-                                      fontWeight: FontWeight.bold,
+                              Align(
+                                alignment: Alignment(0.0, 0),
+                                child: TabBar(
+                                  isScrollable: true,
+                                  labelColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.0,
+                                        letterSpacing: 1.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  indicatorColor:
+                                      FlutterFlowTheme.of(context).tertiary,
+                                  tabs: [
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'wvc7f97z' /* Comidas */,
+                                      ),
                                     ),
-                                indicatorColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                tabs: [
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'wvc7f97z' /* Comidas */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        '1yospfp9' /* Bebidas */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      '1yospfp9' /* Bebidas */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'k8idy8v5' /* Combos */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'k8idy8v5' /* Combos */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'ofsy12ts' /* Productos Favoritos */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'ofsy12ts' /* Productos Favoritos */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'xwpp14ww' /* Combos Favoritos */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'xwpp14ww' /* Combos Favoritos */,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               Expanded(
                                 child: TabBarView(
@@ -948,6 +951,14 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                         gridViewComboRecordList[
                                                             gridViewIndex];
                                                     return InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
                                                           'DetalleCombo',
@@ -1565,6 +1576,14 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                         gridViewComboRecordList[
                                                             gridViewIndex];
                                                     return InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
                                                           'DetalleCombo',

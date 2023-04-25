@@ -139,6 +139,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'esqueceu sua senha?',
       'ru': 'Забыли пароль?',
     },
+    '13vm9wud': {
+      'es': '-- o use --',
+      'en': 'Forgot your password?',
+      'pt': 'esqueceu sua senha?',
+      'ru': 'Забыли пароль?',
+    },
+    'i24fjlg1': {
+      'es': 'G',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
     'uv3l56d0': {
       'es': 'Fecha:',
       'en': 'Date:',
@@ -451,6 +463,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Produtos',
       'ru': 'Продукты',
     },
+    'liqgludc': {
+      'es': 'Demostración',
+      'en': 'Products',
+      'pt': 'Produtos',
+      'ru': 'Продукты',
+    },
     'h1qhmofo': {
       'es': 'Carrito',
       'en': 'orders',
@@ -704,6 +722,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Preço:',
       'ru': 'Цена:',
     },
+    'rljir9m3': {
+      'es': 'Carrito',
+      'en': 'orders',
+      'pt': 'ordens',
+      'ru': 'заказы',
+    },
     '9v9aafd1': {
       'es': 'Home',
       'en': 'home',
@@ -726,7 +750,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Продукты',
     },
     'yrftrui9': {
-      'es': 'Valor final en productos:',
+      'es': 'Agregar monto presiona ->',
       'en': 'Worth:',
       'pt': 'Valor:',
       'ru': 'Ценность:',
@@ -756,7 +780,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'комбо',
     },
     '97uhynq6': {
-      'es': 'Agregar preciona ->  ',
+      'es': 'Agregar monto preciona ->  ',
       'en': 'Worth:',
       'pt': 'Valor:',
       'ru': 'Ценность:',
@@ -774,7 +798,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Цена:',
     },
     't1ns6tr6': {
-      'es': 'Sub total ₡',
+      'es': 'Sub total ₡ ',
       'en': 'Price:',
       'pt': 'Preço:',
       'ru': 'Цена:',
@@ -817,6 +841,103 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'home',
       'pt': 'lar',
       'ru': 'дом',
+    },
+  },
+  // Demostraciones
+  {
+    '0x1clxqx': {
+      'es': 'Demostraciones',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '04od50c4': {
+      'es':
+          'Ayudanos a crecer sube una foto de que te gustaría que lleguemos a implementar en nuestro menú',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'etdnh9fe': {
+      'es': 'Cargar Imagen',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '4g4at5p2': {
+      'es': 'Regresar',
+      'en': 'orders',
+      'pt': 'ordens',
+      'ru': 'заказы',
+    },
+    'q76eheri': {
+      'es': 'Home',
+      'en': 'home',
+      'pt': 'lar',
+      'ru': 'дом',
+    },
+  },
+  // CompIngresarDatos
+  {
+    'd06pe9bq': {
+      'es': 'Nombre cliente',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'lg3p2awr': {
+      'es': 'Option 1',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'q8u7sba0': {
+      'es': 'Mesa',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'o7o72qey': {
+      'es': 'Buscar mesa',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'n7kjmzg9': {
+      'es': 'Observacion',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'z6nqod1b': {
+      'es': 'Option 1',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '7rqybje6': {
+      'es': 'Restaurantes',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'm1nbbtgi': {
+      'es': 'Buscar restaurante',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'lybja07b': {
+      'es': 'Restaurantes',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '45djugow': {
+      'es': 'Completar Orden',
+      'en': '',
+      'pt': '',
+      'ru': '',
     },
   },
   // Miscellaneous

@@ -10,6 +10,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CantonRecord.serializer)
       ..add(ComboRecord.serializer)
       ..add(DistritoRecord.serializer)
+      ..add(FotosParaImplementarRecord.serializer)
+      ..add(ImagenesTabaritoRecord.serializer)
       ..add(LoginRecord.serializer)
       ..add(MesaRecord.serializer)
       ..add(MeseroRecord.serializer)
@@ -19,6 +21,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(RestauranteRecord.serializer)
       ..add(SubCombosRecord.serializer)
       ..add(SubProductosRecord.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])
+          ]),
+          () => new ListBuilder<DocumentReference<Object?>>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])
+          ]),
+          () => new ListBuilder<DocumentReference<Object?>>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(

@@ -39,6 +39,9 @@ abstract class LoginRecord implements Built<LoginRecord, LoginRecordBuilder> {
 
   String? get rol;
 
+  @BuiltValueField(wireName: 'UsuarioSubProducto')
+  DocumentReference? get usuarioSubProducto;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -87,6 +90,7 @@ Map<String, dynamic> createLoginRecordData({
   String? userName,
   DocumentReference? usuarioDetalle,
   String? rol,
+  DocumentReference? usuarioSubProducto,
 }) {
   final firestoreData = serializers.toFirestore(
     LoginRecord.serializer,
@@ -103,7 +107,8 @@ Map<String, dynamic> createLoginRecordData({
         ..userName = userName
         ..usuarios = null
         ..usuarioDetalle = usuarioDetalle
-        ..rol = rol,
+        ..rol = rol
+        ..usuarioSubProducto = usuarioSubProducto,
     ),
   );
 

@@ -119,27 +119,30 @@ class _InicioWidgetState extends State<InicioWidget>
                         initialIndex: 0,
                         child: Column(
                           children: [
-                            TabBar(
-                              isScrollable: true,
-                              labelColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xFF0F1113),
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                isScrollable: true,
+                                labelColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF0F1113),
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).tertiary,
+                                tabs: [
+                                  Tab(
+                                    text: FFLocalizations.of(context).getText(
+                                      'p32ljov9' /* Ingresar */,
+                                    ),
                                   ),
-                              indicatorColor:
-                                  FlutterFlowTheme.of(context).tertiary,
-                              tabs: [
-                                Tab(
-                                  text: FFLocalizations.of(context).getText(
-                                    'p32ljov9' /* Ingresar */,
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             Expanded(
                               child: TabBarView(
@@ -461,6 +464,10 @@ class _InicioWidgetState extends State<InicioWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context
                                                   .pushNamed('OlvidoContrasea');
@@ -483,10 +490,83 @@ class _InicioWidgetState extends State<InicioWidget>
                                             ),
                                           ),
                                         ),
-                                        Expanded(
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 20.0, 0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              '13vm9wud' /* -- o use -- */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 25.0, 0.0, 0.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              GoRouter.of(context)
+                                                  .prepareAuthEvent();
+                                              final user = await authManager
+                                                  .signInWithGoogle(context);
+                                              if (user == null) {
+                                                return;
+                                              }
+
+                                              context.goNamedAuth(
+                                                  'Principal', mounted);
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'i24fjlg1' /* G */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 40.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 20.0,
+                                                      ),
+                                              elevation: 10.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 5.0, 0.0, 0.0),
                                           child: Container(
                                             width: double.infinity,
-                                            height: double.infinity,
+                                            height: 134.4,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -502,122 +582,160 @@ class _InicioWidgetState extends State<InicioWidget>
                                                     MainAxisAlignment
                                                         .spaceEvenly,
                                                 children: [
-                                                  Container(
-                                                    width: 150.0,
-                                                    height: 165.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Row(
+                                                  FutureBuilder<
+                                                      ApiCallResponse>(
+                                                    future: TipoCambioDolarCall
+                                                        .call(),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                SpinKitCubeGrid(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .tertiary,
+                                                              size: 50.0,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      final containerTipoCambioDolarResponse =
+                                                          snapshot.data!;
+                                                      return Container(
+                                                        width: 400.0,
+                                                        height: 98.3,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
+                                                        child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
-                                                                  .center,
+                                                                  .end,
                                                           children: [
-                                                            FlutterFlowLanguageSelector(
-                                                              width: 150.0,
-                                                              backgroundColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .tertiary,
-                                                              borderColor: Colors
-                                                                  .transparent,
-                                                              dropdownIconColor:
-                                                                  Colors.white,
-                                                              borderRadius:
-                                                                  15.0,
-                                                              textStyle:
-                                                                  TextStyle(
-                                                                color: Colors
-                                                                    .white,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                fontSize: 13.0,
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
+                                                              child:
+                                                                  FlutterFlowLanguageSelector(
+                                                                width: 150.0,
+                                                                height: 40.0,
+                                                                backgroundColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .tertiary,
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                dropdownIconColor:
+                                                                    Colors
+                                                                        .white,
+                                                                borderRadius:
+                                                                    15.0,
+                                                                textStyle:
+                                                                    TextStyle(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  fontSize:
+                                                                      13.0,
+                                                                ),
+                                                                hideFlags:
+                                                                    false,
+                                                                flagSize: 24.0,
+                                                                flagTextGap:
+                                                                    8.0,
+                                                                currentLanguage:
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                languages:
+                                                                    FFLocalizations
+                                                                        .languages(),
+                                                                onChanged: (lang) =>
+                                                                    setAppLanguage(
+                                                                        context,
+                                                                        lang),
                                                               ),
-                                                              hideFlags: false,
-                                                              flagSize: 24.0,
-                                                              flagTextGap: 8.0,
-                                                              currentLanguage:
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Text(
                                                                   FFLocalizations.of(
                                                                           context)
-                                                                      .languageCode,
-                                                              languages:
-                                                                  FFLocalizations
-                                                                      .languages(),
-                                                              onChanged: (lang) =>
-                                                                  setAppLanguage(
-                                                                      context,
-                                                                      lang),
+                                                                      .getText(
+                                                                    'uv3l56d0' /* Fecha: */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    TipoCambioDolarCall
+                                                                        .fechaDolar(
+                                                                      containerTipoCambioDolarResponse
+                                                                          .jsonBody,
+                                                                    ).toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Outfit',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: FutureBuilder<
-                                                        ApiCallResponse>(
-                                                      future:
-                                                          TipoCambioDolarCall
-                                                              .call(),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 50.0,
-                                                              height: 50.0,
-                                                              child:
-                                                                  SpinKitCubeGrid(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                                size: 50.0,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        final containerTipoCambioDolarResponse =
-                                                            snapshot.data!;
-                                                        return Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height:
-                                                              double.infinity,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        15.0),
-                                                          ),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Row(
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
@@ -629,14 +747,14 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'uv3l56d0' /* Fecha: */,
+                                                                      'md12o804' /* Tipo de cambio dolar: */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Outfit',
+                                                                              'Montserrat',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                         ),
@@ -649,82 +767,11 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      TipoCambioDolarCall
-                                                                          .fechaDolar(
-                                                                        containerTipoCambioDolarResponse
-                                                                            .jsonBody,
-                                                                      ).toString(),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Outfit',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Text(
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'md12o804' /* Tipo de cambio dolar: */,
+                                                                        'w9oepa04' /* $ */,
                                                                       ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'w9oepa04' /* $ */,
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF379A37),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                    Text(
-                                                                      TipoCambioDolarCall
-                                                                          .compraDolar(
-                                                                        containerTipoCambioDolarResponse
-                                                                            .jsonBody,
-                                                                      ).toString(),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -735,14 +782,30 @@ class _InicioWidgetState extends State<InicioWidget>
                                                                                 Color(0xFF379A37),
                                                                           ),
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                  ),
+                                                                  Text(
+                                                                    TipoCambioDolarCall
+                                                                        .compraDolar(
+                                                                      containerTipoCambioDolarResponse
+                                                                          .jsonBody,
+                                                                    ).toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          color:
+                                                                              Color(0xFF379A37),
+                                                                        ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
-                                                    ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
                                                   ),
                                                 ],
                                               ),

@@ -107,6 +107,14 @@ class _$LoginRecordSerializer implements StructuredSerializer<LoginRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.usuarioSubProducto;
+    if (value != null) {
+      result
+        ..add('UsuarioSubProducto')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -182,6 +190,12 @@ class _$LoginRecordSerializer implements StructuredSerializer<LoginRecord> {
           result.rol = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'UsuarioSubProducto':
+          result.usuarioSubProducto = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -221,6 +235,8 @@ class _$LoginRecord extends LoginRecord {
   @override
   final String? rol;
   @override
+  final DocumentReference<Object?>? usuarioSubProducto;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$LoginRecord([void Function(LoginRecordBuilder)? updates]) =>
@@ -239,6 +255,7 @@ class _$LoginRecord extends LoginRecord {
       this.usuarios,
       this.usuarioDetalle,
       this.rol,
+      this.usuarioSubProducto,
       this.ffRef})
       : super._();
 
@@ -265,6 +282,7 @@ class _$LoginRecord extends LoginRecord {
         usuarios == other.usuarios &&
         usuarioDetalle == other.usuarioDetalle &&
         rol == other.rol &&
+        usuarioSubProducto == other.usuarioSubProducto &&
         ffRef == other.ffRef;
   }
 
@@ -283,6 +301,7 @@ class _$LoginRecord extends LoginRecord {
     _$hash = $jc(_$hash, usuarios.hashCode);
     _$hash = $jc(_$hash, usuarioDetalle.hashCode);
     _$hash = $jc(_$hash, rol.hashCode);
+    _$hash = $jc(_$hash, usuarioSubProducto.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -303,6 +322,7 @@ class _$LoginRecord extends LoginRecord {
           ..add('usuarios', usuarios)
           ..add('usuarioDetalle', usuarioDetalle)
           ..add('rol', rol)
+          ..add('usuarioSubProducto', usuarioSubProducto)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -362,6 +382,12 @@ class LoginRecordBuilder implements Builder<LoginRecord, LoginRecordBuilder> {
   String? get rol => _$this._rol;
   set rol(String? rol) => _$this._rol = rol;
 
+  DocumentReference<Object?>? _usuarioSubProducto;
+  DocumentReference<Object?>? get usuarioSubProducto =>
+      _$this._usuarioSubProducto;
+  set usuarioSubProducto(DocumentReference<Object?>? usuarioSubProducto) =>
+      _$this._usuarioSubProducto = usuarioSubProducto;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -385,6 +411,7 @@ class LoginRecordBuilder implements Builder<LoginRecord, LoginRecordBuilder> {
       _usuarios = $v.usuarios?.toBuilder();
       _usuarioDetalle = $v.usuarioDetalle;
       _rol = $v.rol;
+      _usuarioSubProducto = $v.usuarioSubProducto;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -422,6 +449,7 @@ class LoginRecordBuilder implements Builder<LoginRecord, LoginRecordBuilder> {
               usuarios: _usuarios?.build(),
               usuarioDetalle: usuarioDetalle,
               rol: rol,
+              usuarioSubProducto: usuarioSubProducto,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

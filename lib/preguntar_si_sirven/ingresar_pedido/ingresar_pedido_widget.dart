@@ -376,35 +376,38 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                           initialIndex: 0,
                           child: Column(
                             children: [
-                              TabBar(
-                                labelColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.bold,
+                              Align(
+                                alignment: Alignment(0.0, 0),
+                                child: TabBar(
+                                  labelColor:
+                                      FlutterFlowTheme.of(context).secondary,
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  indicatorColor:
+                                      FlutterFlowTheme.of(context).tertiary,
+                                  tabs: [
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'h1cgkw0b' /* Comidas */,
+                                      ),
                                     ),
-                                indicatorColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                tabs: [
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'h1cgkw0b' /* Comidas */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'glvnqydr' /* Bebidas */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'glvnqydr' /* Bebidas */,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'zz4ndv77' /* Combos */,
+                                      ),
                                     ),
-                                  ),
-                                  Tab(
-                                    text: FFLocalizations.of(context).getText(
-                                      'zz4ndv77' /* Combos */,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               Expanded(
                                 child: TabBarView(
@@ -441,6 +444,14 @@ class _IngresarPedidoWidgetState extends State<IngresarPedidoWidget> {
                                                             12.0),
                                                   ),
                                                   child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
                                                           'ingresarArticulo');

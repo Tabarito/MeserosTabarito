@@ -75,6 +75,10 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () async {
               context.pop();
             },
@@ -211,6 +215,42 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                             ),
                             icon: Icon(
                               Icons.store_rounded,
+                              size: 15.0,
+                            ),
+                            options: FFButtonOptions(
+                              width: 300.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 10.0, 0.0),
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              elevation: 5.0,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              context.pushNamed('Demostraciones');
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'liqgludc' /* Demostración */,
+                            ),
+                            icon: Icon(
+                              Icons.no_food_outlined,
                               size: 15.0,
                             ),
                             options: FFButtonOptions(
@@ -384,8 +424,8 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                                 children: [
                                   Text(
                                     valueOrDefault<String>(
-                                      functions.calcularPorcentaje(
-                                          valueOrDefault<String>(
+                                      functions
+                                          .calcPorcent(valueOrDefault<String>(
                                         _model.ratingBarValue?.toString(),
                                         '1',
                                       )),
@@ -455,7 +495,16 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('Inicio');
+                          GoRouter.of(context).prepareAuthEvent();
+                          await authManager.signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          setState(() {
+                            FFAppState().montoFinalProductos = 0.0;
+                            FFAppState().montoFinalCombos = 0.0;
+                          });
+
+                          context.goNamedAuth('Inicio', mounted);
                         },
                         text: FFLocalizations.of(context).getText(
                           'dxlnb6ed' /* Cerrar sesión */,

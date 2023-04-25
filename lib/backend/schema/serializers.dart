@@ -13,6 +13,8 @@ import 'canton_record.dart';
 import 'distrito_record.dart';
 import 'sub_productos_record.dart';
 import 'sub_combos_record.dart';
+import 'imagenes_tabarito_record.dart';
+import 'fotos_para_implementar_record.dart';
 
 import 'index.dart';
 
@@ -35,6 +37,8 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   DistritoRecord,
   SubProductosRecord,
   SubCombosRecord,
+  ImagenesTabaritoRecord,
+  FotosParaImplementarRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

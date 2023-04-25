@@ -50,6 +50,10 @@ class _VerPedidoWidgetState extends State<VerPedidoWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () async {
               context.pop();
             },

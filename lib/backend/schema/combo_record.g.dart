@@ -74,12 +74,6 @@ class _$ComboRecordSerializer implements StructuredSerializer<ComboRecord> {
                   DocumentReference, const [const FullType.nullable(Object)])
             ])));
     }
-    value = object.cantidad;
-    if (value != null) {
-      result
-        ..add('cantidad')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -136,10 +130,6 @@ class _$ComboRecordSerializer implements StructuredSerializer<ComboRecord> {
                     DocumentReference, const [const FullType.nullable(Object)])
               ]))! as BuiltList<Object?>);
           break;
-        case 'cantidad':
-          result.cantidad = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -169,8 +159,6 @@ class _$ComboRecord extends ComboRecord {
   @override
   final BuiltList<DocumentReference<Object?>>? favoritos;
   @override
-  final int? cantidad;
-  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$ComboRecord([void Function(ComboRecordBuilder)? updates]) =>
@@ -184,7 +172,6 @@ class _$ComboRecord extends ComboRecord {
       this.listaProductoCombo,
       this.obsrvCombo,
       this.favoritos,
-      this.cantidad,
       this.ffRef})
       : super._();
 
@@ -206,7 +193,6 @@ class _$ComboRecord extends ComboRecord {
         listaProductoCombo == other.listaProductoCombo &&
         obsrvCombo == other.obsrvCombo &&
         favoritos == other.favoritos &&
-        cantidad == other.cantidad &&
         ffRef == other.ffRef;
   }
 
@@ -220,7 +206,6 @@ class _$ComboRecord extends ComboRecord {
     _$hash = $jc(_$hash, listaProductoCombo.hashCode);
     _$hash = $jc(_$hash, obsrvCombo.hashCode);
     _$hash = $jc(_$hash, favoritos.hashCode);
-    _$hash = $jc(_$hash, cantidad.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -236,7 +221,6 @@ class _$ComboRecord extends ComboRecord {
           ..add('listaProductoCombo', listaProductoCombo)
           ..add('obsrvCombo', obsrvCombo)
           ..add('favoritos', favoritos)
-          ..add('cantidad', cantidad)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -280,10 +264,6 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
   set favoritos(ListBuilder<DocumentReference<Object?>>? favoritos) =>
       _$this._favoritos = favoritos;
 
-  int? _cantidad;
-  int? get cantidad => _$this._cantidad;
-  set cantidad(int? cantidad) => _$this._cantidad = cantidad;
-
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -302,7 +282,6 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
       _listaProductoCombo = $v.listaProductoCombo?.toBuilder();
       _obsrvCombo = $v.obsrvCombo;
       _favoritos = $v.favoritos?.toBuilder();
-      _cantidad = $v.cantidad;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -335,7 +314,6 @@ class ComboRecordBuilder implements Builder<ComboRecord, ComboRecordBuilder> {
               listaProductoCombo: _listaProductoCombo?.build(),
               obsrvCombo: obsrvCombo,
               favoritos: _favoritos?.build(),
-              cantidad: cantidad,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;
