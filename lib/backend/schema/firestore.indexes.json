@@ -13,6 +13,20 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "Orden",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Restaurante",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fechaOrden",
+          "order": "DESCENDING"
+        }
+      ]
     }
   ],
   "fieldOverrides": [

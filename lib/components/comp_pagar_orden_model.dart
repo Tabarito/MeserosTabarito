@@ -21,9 +21,6 @@ class CompPagarOrdenModel extends FlutterFlowModel {
   // State field(s) for TxtObservacion widget.
   TextEditingController? txtObservacionController;
   String? Function(BuildContext, String?)? txtObservacionControllerValidator;
-  // State field(s) for TxtRestaurante widget.
-  TextEditingController? txtRestauranteController;
-  String? Function(BuildContext, String?)? txtRestauranteControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -33,7 +30,6 @@ class CompPagarOrdenModel extends FlutterFlowModel {
     txtNombreClienteController?.dispose();
     txtMesaController?.dispose();
     txtObservacionController?.dispose();
-    txtRestauranteController?.dispose();
   }
 
   /// Additional helper methods are added here.

@@ -44,7 +44,6 @@ class _CompPagarOrdenWidgetState extends State<CompPagarOrdenWidget> {
     _model.txtNombreClienteController ??= TextEditingController();
     _model.txtMesaController ??= TextEditingController();
     _model.txtObservacionController ??= TextEditingController();
-    _model.txtRestauranteController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -180,7 +179,7 @@ class _CompPagarOrdenWidgetState extends State<CompPagarOrdenWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     hintText: FFLocalizations.of(context).getText(
-                      '5l9l3w08' /* Observacion */,
+                      '5l9l3w08' /* Observación */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodySmall,
                     enabledBorder: UnderlineInputBorder(
@@ -227,65 +226,6 @@ class _CompPagarOrdenWidgetState extends State<CompPagarOrdenWidget> {
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-              child: TextFormField(
-                controller: _model.txtRestauranteController,
-                autofocus: true,
-                obscureText: false,
-                decoration: InputDecoration(
-                  hintText: FFLocalizations.of(context).getText(
-                    'ix6dk8r9' /* Restaurantes */,
-                  ),
-                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                  focusedErrorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0x00000000),
-                      width: 1.0,
-                    ),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(4.0),
-                      topRight: Radius.circular(4.0),
-                    ),
-                  ),
-                  filled: true,
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                style: FlutterFlowTheme.of(context).bodyMedium,
-                validator: _model.txtRestauranteControllerValidator
-                    .asValidator(context),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   final ordenCreateData = {
@@ -297,6 +237,7 @@ class _CompPagarOrdenWidgetState extends State<CompPagarOrdenWidget> {
                       estadoOrden: 'true',
                       montoTotal: widget.montofinal,
                       mesa2: _model.txtMesaController.text,
+                      restaurante: FFAppState().restaurante,
                     ),
                     'listaProductoOrden2':
                         widget.listaProductos?.map((e) => e.reference).toList(),
@@ -332,8 +273,8 @@ class _CompPagarOrdenWidgetState extends State<CompPagarOrdenWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('btnRegresar pressed ...');
+                onPressed: () async {
+                  Navigator.pop(context);
                 },
                 text: FFLocalizations.of(context).getText(
                   '1xo9oz7h' /* Regresar */,

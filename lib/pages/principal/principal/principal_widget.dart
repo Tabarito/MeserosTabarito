@@ -1,9 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -142,7 +145,7 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 5.0, 0.0, 20.0),
+                                0.0, 0.0, 0.0, 20.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -160,198 +163,238 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                         ],
                       ),
                     ),
-                    Container(
-                      width: 4000.0,
-                      height: 300.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('ingresarPedido');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'e17iplr3' /* Ingresar pedido */,
-                            ),
-                            icon: Icon(
-                              Icons.event_note_rounded,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              width: 300.0,
+                    StreamBuilder<List<RestauranteRecord>>(
+                      stream: queryRestauranteRecord(),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              elevation: 5.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                              child: SpinKitCubeGrid(
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                size: 50.0,
                               ),
-                              borderRadius: BorderRadius.circular(15.0),
                             ),
+                          );
+                        }
+                        List<RestauranteRecord> containerRestauranteRecordList =
+                            snapshot.data!;
+                        return Container(
+                          width: 4000.0,
+                          height: 300.0,
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
                           ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('Productos');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'xynh6z3a' /* Productos */,
-                            ),
-                            icon: Icon(
-                              Icons.store_rounded,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              width: 300.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    45.0, 0.0, 45.0, 0.0),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.cbRestaurantesValueController ??=
+                                          FormFieldController<String>(null),
+                                  options: containerRestauranteRecordList
+                                      .map((e) => e.nombreRestaurante)
+                                      .withoutNulls
+                                      .toList()
+                                      .toList(),
+                                  onChanged: (val) async {
+                                    setState(
+                                        () => _model.cbRestaurantesValue = val);
+                                    setState(() {
+                                      FFAppState().restaurante =
+                                          _model.cbRestaurantesValue!;
+                                    });
+                                  },
+                                  width: double.infinity,
+                                  height: 50.0,
+                                  searchHintTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'xw27b2fk' /* Seleccione un restaurante */,
                                   ),
-                              elevation: 5.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('OtrasDemostraciones');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'liqgludc' /* Demostración */,
-                            ),
-                            icon: Icon(
-                              Icons.no_food_outlined,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              width: 300.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
+                                  searchHintText:
+                                      FFLocalizations.of(context).getText(
+                                    'k9jtaibm' /* --Seleccione-- */,
                                   ),
-                              elevation: 5.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).tertiary,
+                                  elevation: 2.0,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0.0,
+                                  borderRadius: 0.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 4.0, 12.0, 4.0),
+                                  hidesUnderline: true,
+                                  isSearchable: false,
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('Carrito');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'h1qhmofo' /* Carrito */,
-                            ),
-                            icon: Icon(
-                              Icons.shopping_cart,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              width: 300.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Productos');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'xynh6z3a' /* Productos */,
+                                ),
+                                icon: Icon(
+                                  Icons.store_rounded,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                              elevation: 5.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed('Orden');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'fzzvft5q' /* Orden */,
-                            ),
-                            icon: Icon(
-                              Icons.money,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              width: 300.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.normal,
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('OtrasDemostraciones');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'liqgludc' /* Demostración */,
+                                ),
+                                icon: Icon(
+                                  Icons.no_food_outlined,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                              elevation: 5.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Carrito');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'h1qhmofo' /* Carrito */,
+                                ),
+                                icon: Icon(
+                                  Icons.shopping_cart,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                              ),
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Orden');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'fzzvft5q' /* Orden */,
+                                ),
+                                icon: Icon(
+                                  Icons.money,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                  elevation: 5.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        );
+                      },
                     ),
                     Padding(
                       padding:

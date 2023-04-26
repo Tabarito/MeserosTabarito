@@ -451,11 +451,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Menu principal',
       'ru': 'Главное меню',
     },
-    'e17iplr3': {
-      'es': 'Ingresar pedido',
-      'en': 'enter order',
-      'pt': 'entrar no pedido',
-      'ru': 'ввести заказ',
+    'ceujxysm': {
+      'es': 'Option 1',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'xw27b2fk': {
+      'es': 'Seleccione un restaurante',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'k9jtaibm': {
+      'es': '--Seleccione--',
+      'en': '',
+      'pt': '',
+      'ru': '',
     },
     'xynh6z3a': {
       'es': 'Productos',
@@ -804,7 +816,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Цена:',
     },
     'v8f9ise1': {
-      'es': 'Por favor preciona los montos finales para refrescar',
+      'es': 'Por favor presiona los montos finales para refrescar',
       'en': '',
       'pt': '',
       'ru': '',
@@ -830,29 +842,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Orden
   {
-    'rbh6dxga': {
+    'vtu9y7pj': {
+      'es': 'Órdenes',
+      'en': 'cart orders',
+      'pt': 'pedidos de carrinho',
+      'ru': 'корзина заказов',
+    },
+    'is1p7ftb': {
       'es': 'Productos: ',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'a1owclpf': {
+    'xrivp5v6': {
       'es': 'Combos: ',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'ku6b3g3g': {
+    'k5uy53uj': {
       'es': 'Cliente: ',
       'en': '',
       'pt': '',
       'ru': '',
-    },
-    'b4ivltdc': {
-      'es': 'Ordenes',
-      'en': 'Page Title',
-      'pt': 'Título da página',
-      'ru': 'Заголовок страницы',
     },
     'irvwqv54': {
       'es': 'Home',
@@ -910,13 +922,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '',
     },
     '5l9l3w08': {
-      'es': 'Observacion',
-      'en': '',
-      'pt': '',
-      'ru': '',
-    },
-    'ix6dk8r9': {
-      'es': 'Restaurantes',
+      'es': 'Observación',
       'en': '',
       'pt': '',
       'ru': '',
@@ -928,6 +934,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '',
     },
     '1xo9oz7h': {
+      'es': 'Regresar',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+  },
+  // CompVerOrdenes
+  {
+    'mku9yj3o': {
+      'es': 'Obervaciones',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'cc3secmt': {
+      'es': 'Productos',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    'kht9amfy': {
+      'es': 'Combos',
+      'en': '',
+      'pt': '',
+      'ru': '',
+    },
+    '9s72pfoi': {
       'es': 'Regresar',
       'en': '',
       'pt': '',

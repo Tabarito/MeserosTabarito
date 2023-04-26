@@ -69,6 +69,30 @@ class FFAppState extends ChangeNotifier {
   set image(String _value) {
     _image = _value;
   }
+
+  List<dynamic> _ListaDeProductosCompados = [];
+  List<dynamic> get ListaDeProductosCompados => _ListaDeProductosCompados;
+  set ListaDeProductosCompados(List<dynamic> _value) {
+    _ListaDeProductosCompados = _value;
+  }
+
+  void addToListaDeProductosCompados(dynamic _value) {
+    _ListaDeProductosCompados.add(_value);
+  }
+
+  void removeFromListaDeProductosCompados(dynamic _value) {
+    _ListaDeProductosCompados.remove(_value);
+  }
+
+  void removeAtIndexFromListaDeProductosCompados(int _index) {
+    _ListaDeProductosCompados.removeAt(_index);
+  }
+
+  String _restaurante = '';
+  String get restaurante => _restaurante;
+  set restaurante(String _value) {
+    _restaurante = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
