@@ -229,11 +229,11 @@ class _PrincipalWidgetState extends State<PrincipalWidget>
                                             .secondaryText,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'xw27b2fk' /* Seleccione un restaurante */,
+                                    '9iz5b9kc' /* Seleccione un restaurante */,
                                   ),
                                   searchHintText:
                                       FFLocalizations.of(context).getText(
-                                    'k9jtaibm' /* --Seleccione-- */,
+                                    '87n90b8m' /* --Seleccione-- */,
                                   ),
                                   fillColor:
                                       FlutterFlowTheme.of(context).tertiary,

@@ -451,19 +451,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Menu principal',
       'ru': 'Главное меню',
     },
-    'ceujxysm': {
+    'sp2x5r9y': {
       'es': 'Option 1',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'xw27b2fk': {
+    '9iz5b9kc': {
       'es': 'Seleccione un restaurante',
       'en': '',
       'pt': '',
       'ru': '',
     },
-    'k9jtaibm': {
+    '87n90b8m': {
       'es': '--Seleccione--',
       'en': '',
       'pt': '',
@@ -582,7 +582,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q62bs9uh': {
       'es':
-          'Enviaremos un correo con un enlace para restablecer su contraseña. Por favor ingrese el correo asociado a la cuenta que a la que desea restablecer la contraseña, en el siguiente campo de texto.',
+          'Enviaremos un correo con un enlace para restablecer su contraseña. Por favor, ingrese el correo asociado a la cuenta a la que desea restablecer la contraseña, en el siguiente campo de texto.',
       'en':
           'We will send an email with a link to reset your password, please enter your email associated with the account you want to reset the password in the text field below.',
       'pt':
@@ -883,13 +883,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '04od50c4': {
       'es':
-          'Ayudanos a crecer sube una foto de que te gustaría que lleguemos a implementar en nuestro menú',
+          '¡Ayúdanos a crecer! Sube una foto de que te gustaría que lleguemos a implementar en nuestro menú',
       'en': '',
       'pt': '',
       'ru': '',
     },
     'etdnh9fe': {
-      'es': 'Cargar Imagen',
+      'es': 'Cargar imagen',
       'en': '',
       'pt': '',
       'ru': '',

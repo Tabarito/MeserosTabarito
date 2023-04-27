@@ -214,7 +214,7 @@ class _OtrasDemostracionesWidgetState extends State<OtrasDemostracionesWidget>
                             20.0, 0.0, 20.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '04od50c4' /* Ayudanos a crecer sube una fot... */,
+                            '04od50c4' /* ¡Ayúdanos a crecer! Sube una f... */,
                           ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
@@ -299,7 +299,7 @@ class _OtrasDemostracionesWidgetState extends State<OtrasDemostracionesWidget>
                           }
                         },
                         text: FFLocalizations.of(context).getText(
-                          'etdnh9fe' /* Cargar Imagen */,
+                          'etdnh9fe' /* Cargar imagen */,
                         ),
                         options: FFButtonOptions(
                           width: 130.0,
